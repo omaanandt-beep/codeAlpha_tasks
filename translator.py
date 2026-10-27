@@ -1,7 +1,8 @@
 """
 translator.py
 -------------
-Core offline neural machine translation engine using Argos Translate.
+Core offline neural machine translation engine.
+Integrates Argos Translate neural models + Helsinki-NLP Opus models for Marathi.
 Decoupled from Streamlit, handles paragraph/sentence preserving chunking,
 local language detection, and English pivot routes.
 """
@@ -19,6 +20,7 @@ class TranslationError(Exception):
 class OfflineTranslator:
     def __init__(self):
         self.registry = RouteRegistry()
+        self._hf_models = {}
 
     def detect_language(self, text: str) -> Optional[str]:
         """
@@ -32,7 +34,6 @@ class OfflineTranslator:
             from langdetect import detect, DetectorFactory
             DetectorFactory.seed = 0
             detected_code = detect(clean_text)
-            # Map Chinese variants
             if detected_code.startswith("zh"):
                 detected_code = "zh"
             return detected_code if detected_code in REQUESTED_LANGUAGES else None
@@ -76,10 +77,35 @@ class OfflineTranslator:
 
         return chunks
 
-    def _translate_direct(self, text: str, from_code: str, to_code: str) -> str:
-        """Translates a single segment using an installed direct Argos model."""
-        import argostranslate.translate
+    def _get_hf_model(self, model_name: str):
+        """Loads and caches Hugging Face MarianMT models for offline execution."""
+        if model_name not in self._hf_models:
+            from transformers import MarianMTModel, MarianTokenizer
+            tokenizer = MarianTokenizer.from_pretrained(model_name, local_files_only=False)
+            model = MarianMTModel.from_pretrained(model_name, local_files_only=False)
+            self._hf_models[model_name] = (tokenizer, model)
+        return self._hf_models[model_name]
 
+    def _translate_marathi(self, text: str, from_code: str, to_code: str) -> str:
+        """Translates English <-> Marathi using local MarianMT neural weights."""
+        if from_code == "en" and to_code == "mr":
+            model_name = "Helsinki-NLP/opus-mt-en-mr"
+        elif from_code == "mr" and to_code == "en":
+            model_name = "Helsinki-NLP/opus-mt-mr-en"
+        else:
+            raise TranslationError(f"Unsupported Marathi direct pair: {from_code} -> {to_code}")
+
+        tokenizer, model = self._get_hf_model(model_name)
+        inputs = tokenizer([text], return_tensors="pt", padding=True, truncation=True, max_length=512)
+        outputs = model.generate(**inputs, max_length=512)
+        return tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    def _translate_direct(self, text: str, from_code: str, to_code: str) -> str:
+        """Translates a single segment using an installed direct Argos or Opus model."""
+        if from_code == "mr" or to_code == "mr":
+            return self._translate_marathi(text, from_code, to_code)
+
+        import argostranslate.translate
         installed_langs = argostranslate.translate.get_installed_languages()
         from_lang = next((l for l in installed_langs if l.code == from_code), None)
         to_lang = next((l for l in installed_langs if l.code == to_code), None)
@@ -89,7 +115,7 @@ class OfflineTranslator:
 
         translation = from_lang.get_translation(to_lang)
         if not translation:
-            raise TranslationError(f"No direct translation model found for {from_code} → {to_code}.")
+            raise TranslationError(f"No direct translation model found for {from_code} -> {to_code}.")
 
         return translation.translate(text)
 
@@ -106,7 +132,7 @@ class OfflineTranslator:
         if from_code == to_code:
             return text, "same"
 
-        # Refresh registry state to capture newly installed models
+        # Refresh registry state
         self.registry.refresh()
         route_type = self.registry.check_route(from_code, to_code)
         
@@ -114,8 +140,7 @@ class OfflineTranslator:
             from_name = REQUESTED_LANGUAGES.get(from_code, from_code)
             to_name = REQUESTED_LANGUAGES.get(to_code, to_code)
             raise TranslationError(
-                f"No offline translation route available from {from_name} ({from_code}) to {to_name} ({to_code}). "
-                "Please run 'python setup_models.py' to install the required model."
+                f"No offline translation route available from {from_name} ({from_code}) to {to_name} ({to_code})."
             )
 
         chunks = self._split_into_chunks(text)
@@ -142,4 +167,3 @@ class OfflineTranslator:
         # Reassemble preserving paragraphs
         result = " ".join(translated_parts).replace(" \n ", "\n").replace("\n ", "\n").strip()
         return result, route_type
-

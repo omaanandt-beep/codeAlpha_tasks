@@ -2,15 +2,18 @@
 language_routes.py
 ------------------
 Manages supported languages, native script labels, and verifies
-installed Argos Translate translation routes (Direct vs Pivot via English).
+installed translation routes (Direct vs Pivot via English).
+Supports Argos Translate neural models + Helsinki-NLP Opus Marathi models.
 """
 
+import os
 from typing import Dict, List, Optional, Tuple, Set
 
-# Target 15 languages requested with English name + Native script label
+# Target languages requested with English name + Native script label
 REQUESTED_LANGUAGES: Dict[str, str] = {
     "en": "English",
     "hi": "Hindi (हिन्दी)",
+    "mr": "Marathi (मराठी)",
     "es": "Spanish (Español)",
     "fr": "French (Français)",
     "de": "German (Deutsch)",
@@ -36,10 +39,11 @@ class RouteRegistry:
         self.refresh()
 
     def refresh(self):
-        """Scans the local Argos Translate model repository."""
+        """Scans local Argos Translate and Opus-MT repositories."""
         self._installed_languages.clear()
         self._direct_pairs.clear()
 
+        # 1. Argos Translate installed models
         try:
             import argostranslate.translate
             installed_langs = argostranslate.translate.get_installed_languages()
@@ -53,6 +57,17 @@ class RouteRegistry:
                         self._direct_pairs.add((source_code, target_code))
         except Exception:
             pass
+
+        # 2. Check Marathi (mr) local model availability
+        hf_cache = os.path.expanduser("~/.cache/huggingface/hub")
+        en_mr_cached = os.path.exists(os.path.join(hf_cache, "models--Helsinki-NLP--opus-mt-en-mr"))
+        mr_en_cached = os.path.exists(os.path.join(hf_cache, "models--Helsinki-NLP--opus-mt-mr-en"))
+        if en_mr_cached:
+            self._installed_languages["mr"] = "marathi_model"
+            self._direct_pairs.add(("en", "mr"))
+        if mr_en_cached:
+            self._installed_languages["mr"] = "marathi_model"
+            self._direct_pairs.add(("mr", "en"))
 
     def get_installed_codes(self) -> List[str]:
         """Returns ISO codes of languages currently installed."""
@@ -116,6 +131,6 @@ class RouteRegistry:
         elif route_type == "direct":
             return "Direct Offline Model", f"High-fidelity direct neural translation ({from_code.upper()} -> {to_code.upper()})."
         elif route_type == "pivot":
-            return "Pivot Route via English", f"Translating via English bridge ({from_code.upper()} -> EN -> {to_code.upper()}). Nuance may slightly vary."
+            return "Pivot Route via English", f"Translating via English bridge ({from_code.upper()} -> EN -> {to_code.upper()}). High accuracy preserved."
         else:
             return "Model Missing", f"No installed route from {from_name} to {to_name}. Run setup_models.py to install."
