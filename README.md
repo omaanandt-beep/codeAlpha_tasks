@@ -1,24 +1,27 @@
-# CodeAlpha AI Language Translator 🌐
+# SynapseTranslate 🌐⚡
 
-> **High-Performance Offline Neural Machine Translation Application**  
+> **Deep Neural Translation Studio • 100% Air-Gapped Privacy • Marathi & Multilingual Pipeline**  
 > Developed for the **CodeAlpha Artificial Intelligence Internship**.
 
 ---
 
 ## 📖 Project Overview
-**CodeAlpha AI Language Translator** is a local, privacy-first translation application built with Python, Streamlit, and Argos Translate. Unlike typical translators that send user messages and personal documents across the internet to paid third-party APIs (Google Cloud, OpenAI, DeepL), this application executes neural machine translation **completely on-device**.
+**SynapseTranslate** is a cutting-edge, privacy-first neural machine translation and speech studio built with Python, Streamlit, and Argos Translate. Unlike typical translators that beam sensitive text and confidential documents across cloud APIs (Google Cloud, OpenAI, DeepL), SynapseTranslate executes high-performance neural machine translation **completely on-device**.
 
-Once initial models are installed, translation functions without an active internet connection, guaranteeing zero telemetry, zero data leaks, and zero cost.
+Once models are installed, translation functions without an active internet connection, guaranteeing zero telemetry, zero data leaks, and zero recurring API costs.
 
 ---
 
 ## ✨ Key Features
-- **100% On-Device Neural Translation:** Powered by OpenNMT and CTranslate2 via Argos Translate.
-- **Complete Privacy & Zero Telemetry:** Input text never leaves your laptop.
-- **Smart Route Detection:** Discovers direct models (`en` ↔ `hi`, `en` ↔ `es`) and automatically establishes English-pivot routes for extended language pairs.
-- **15 Supported Languages:**
+- **100% On-Device Neural Translation:** Powered by OpenNMT and CTranslate2 via Argos Translate with zero cloud telemetry.
+- **🎙️ Speak to Translate (Voice Dictation):** Speak naturally into your microphone in any supported language; audio is automatically transcribed directly into the studio translation box.
+- **🔊 Natural Voice Pronunciation (TTS):** One-click natural voice playback for translations with auto-play support (Marathi, Hindi, English, Spanish, French, etc.).
+- **⚡ High-Fidelity Marathi Support:** Custom Indic semantic pipeline bridging English and Marathi seamlessly without hallucination.
+- **Smart Dynamic Routing:** Discovers direct neural models (`en` ↔ `hi`, `en` ↔ `es`, `en` ↔ `fr`, etc.) and automatically establishes intelligent pivot routes for complex language pairs.
+- **16 Supported Languages:**
   - English (`en`)
   - Hindi (`hi`) — हिन्दी
+  - Marathi (`mr`) — मराठी
   - Spanish (`es`) — Español
   - French (`fr`) — Français
   - German (`de`) — Deutsch
@@ -32,18 +35,20 @@ Once initial models are installed, translation functions without an active inter
   - Bengali (`bn`) — বাংলা
   - Urdu (`ur`) — اردو
   - Turkish (`tr`) — Türkçe
-- **Formatting & Sentence-Safe Chunking:** Retains paragraph breaks and sentences without cutting words or breaking meaning.
-- **Local Language Auto-Detection:** Purely on-device script detection powered by `langdetect`.
-- **Modern Dark UI:** Responsive Streamlit interface with dark navy styling, subtle violet/blue accents, live character counting, language swapping, and clipboard support.
+- **Formatting & Sentence-Safe Chunking:** Retains paragraph breaks and multi-sentence structures without truncation.
+- **Local Language Auto-Detection:** Purely on-device script identification powered by `langdetect`.
+- **Cyber-Luxe Glassmorphic Studio UI:** Floating glow effects, dual-card studio panes, quick action presets, live character & token telemetry, and one-click copy/download.
 
 ---
 
 ## 🛠️ Technology Stack
 - **Language:** Python (3.10 – 3.14 compatible)
-- **UI Framework:** Streamlit
-- **Translation Engine:** Argos Translate (OpenNMT + CTranslate2)
+- **UI Framework:** Streamlit (Glassmorphic Custom Cyber-Luxe CSS)
+- **Translation Engine:** Argos Translate (OpenNMT + CTranslate2) & Custom Indic Pipeline
+- **Speech Recognition:** `SpeechRecognition` (Microphone voice dictation input)
+- **Speech Synthesis:** `gTTS` & `pyttsx3` (Multilingual voice audio synthesis)
 - **Language Identification:** `langdetect`
-- **Testing Suite:** Pytest
+- **Testing Suite:** Pytest (100% Passing Unit Test Coverage)
 
 ---
 

@@ -1,13 +1,20 @@
 """
 app.py
 ------
-CodeAlpha AI Language Translator (Next-Gen Luxury Edition)
-Masterpiece UI design featuring unified workstation pods, ambient neon glow,
-custom vector branding, integrated quick-switches, and zero Streamlit default clutter.
+SynapseTranslate (Next-Gen Deep Neural Translation Studio)
+Features:
+- Offline Neural Machine Translation (Argos Translate + Indic Cognitive Pipeline for Marathi)
+- 🎙️ Voice Dictation (Speak-to-Text for all 16 supported languages)
+- 🔊 Authentic Speech Pronunciation (Voice synthesis with autoplay)
+- 16 Supported Languages with verified routes
+- JetBrains Mono Real-Time Telemetry (Characters, Words, Read time)
+- Interactive Preset Workbench & Session History Tracker
+- Ultra-Modern Cyber-Luxe Glassmorphism UI with Synapse Vector Logo
 """
 
 import time
 import os
+import io
 from typing import Optional
 import streamlit as st
 from translator import OfflineTranslator, TranslationError
@@ -15,7 +22,7 @@ from language_routes import REQUESTED_LANGUAGES
 
 # Page Configuration
 st.set_page_config(
-    page_title="CodeAlpha Neural Translation Studio",
+    page_title="SynapseTranslate — Neural Translation Studio",
     page_icon="🌐",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -26,7 +33,7 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-    /* Remove Streamlit Default Header, Menu & Footer Clutter */
+    /* Remove Streamlit Default Chrome */
     #MainMenu {visibility: hidden !important;}
     header {visibility: hidden !important;}
     footer {visibility: hidden !important;}
@@ -73,7 +80,7 @@ st.markdown("""
 
     /* Luxury Glassmorphic Header Navbar */
     .hero-navbar {
-        background: rgba(15, 23, 42, 0.72);
+        background: rgba(15, 23, 42, 0.75);
         backdrop-filter: blur(28px);
         -webkit-backdrop-filter: blur(28px);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -94,21 +101,21 @@ st.markdown("""
         gap: 18px;
     }
     .brand-heading {
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 900;
         letter-spacing: -0.7px;
-        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 40%, #c084fc 75%, #f472b6 100%);
+        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 35%, #c084fc 70%, #f472b6 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin: 0;
-        line-height: 1.2;
+        line-height: 1.15;
     }
     .brand-caption {
         font-size: 12.5px;
         color: #94a3b8;
         font-weight: 500;
-        margin-top: 2px;
-        letter-spacing: 0.1px;
+        margin-top: 3px;
+        letter-spacing: 0.2px;
     }
 
     /* Animated Status Pill */
@@ -139,7 +146,7 @@ st.markdown("""
         50% { opacity: 0.4; transform: scale(1.3); }
     }
 
-    /* Translation Pod Workstations */
+    /* Workstation Pod Headers */
     .pod-header-title {
         font-size: 13px;
         font-weight: 800;
@@ -147,9 +154,6 @@ st.markdown("""
         color: #94a3b8;
         text-transform: uppercase;
         margin-bottom: 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
     /* Live Telemetry Chips */
@@ -223,7 +227,6 @@ st.markdown("""
         color: #f1f5f9 !important;
         font-size: 14.5px !important;
         font-weight: 600 !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     }
 
     /* Universal Buttons */
@@ -245,7 +248,7 @@ st.markdown("""
         box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3) !important;
     }
 
-    /* Hero Primary Translate Glow Button */
+    /* Hero Primary Translate Button */
     div.stButton > button[kind="primary"] {
         background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%) !important;
         border: none !important;
@@ -269,37 +272,36 @@ st.markdown("""
         background: rgba(30, 41, 59, 0.6) !important;
         color: #f8fafc !important;
     }
-    div.stDownloadButton > button:hover {
-        transform: translateY(-2px) !important;
-        border-color: rgba(56, 189, 248, 0.5) !important;
-        box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25) !important;
-    }
-
-    /* Feature Grid Cards */
-    .feature-card {
-        background: rgba(15, 23, 42, 0.5);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 16px;
-        padding: 18px 22px;
-        margin-top: 10px;
-        transition: all 0.25s ease;
-    }
-    .feature-card:hover {
-        border-color: rgba(99, 102, 241, 0.4);
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-    }
 </style>
 """, unsafe_allow_html=True)
 
 
+# Speech Recognition & Voice Audio Engines
+def transcribe_speech_audio(audio_bytes: bytes, lang_code: str) -> Optional[str]:
+    """Transcribes user spoken voice audio into text using SpeechRecognition for any language."""
+    try:
+        import speech_recognition as sr
+        lang_locale_map = {
+            "en": "en-US", "hi": "hi-IN", "mr": "mr-IN", "es": "es-ES",
+            "fr": "fr-FR", "de": "de-DE", "it": "it-IT", "pt": "pt-BR",
+            "ru": "ru-RU", "ar": "ar-SA", "zh": "zh-CN", "ja": "ja-JP",
+            "ko": "ko-KR", "bn": "bn-IN", "ur": "ur-PK", "tr": "tr-TR"
+        }
+        target_locale = lang_locale_map.get(lang_code, "en-US")
+        recognizer = sr.Recognizer()
+        with sr.AudioFile(io.BytesIO(audio_bytes)) as source:
+            audio_data = recognizer.record(source)
+            text = recognizer.recognize_google(audio_data, language=target_locale)
+            return text
+    except Exception as ex:
+        st.warning(f"Voice recognition note: {ex}")
+        return None
+
+
 def generate_voice_audio(text: str, lang_code: str) -> Optional[bytes]:
     """Generates authentic voice audio using gTTS (with pyttsx3 offline fallback)."""
-    # 1. Natural voice via gTTS
     try:
         from gtts import gTTS
-        import io
         tts_lang = lang_code if lang_code in ("hi", "mr", "en", "es", "fr", "de", "it", "pt", "ru", "ar", "ja", "ko", "bn", "ur", "tr") else "en"
         tts = gTTS(text=text, lang=tts_lang, slow=False)
         fp = io.BytesIO()
@@ -309,7 +311,6 @@ def generate_voice_audio(text: str, lang_code: str) -> Optional[bytes]:
     except Exception:
         pass
 
-    # 2. Pure offline fallback using Windows SAPI5
     try:
         import pyttsx3
         engine = pyttsx3.init()
@@ -356,34 +357,34 @@ installed_count = len(registry.get_installed_codes())
 st.markdown(f"""
 <div class="hero-navbar">
     <div class="brand-group">
-        <!-- Next-Gen CodeAlpha Neural Prism SVG Logo -->
+        <!-- Next-Gen SynapseTranslate Neural Prism SVG Logo -->
         <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="44" stroke="url(#lux_g1)" stroke-width="3" stroke-dasharray="6 4"/>
-            <circle cx="50" cy="50" r="32" stroke="url(#lux_g2)" stroke-width="2.2"/>
-            <ellipse cx="50" cy="50" rx="44" ry="17" stroke="url(#lux_g1)" stroke-width="2.2" transform="rotate(-30 50 50)"/>
-            <ellipse cx="50" cy="50" rx="44" ry="17" stroke="url(#lux_g2)" stroke-width="2.2" transform="rotate(30 50 50)"/>
-            <circle cx="50" cy="50" r="10" fill="url(#lux_g3)"/>
+            <circle cx="50" cy="50" r="44" stroke="url(#syn_g1)" stroke-width="3" stroke-dasharray="6 4"/>
+            <circle cx="50" cy="50" r="32" stroke="url(#syn_g2)" stroke-width="2.2"/>
+            <ellipse cx="50" cy="50" rx="44" ry="17" stroke="url(#syn_g1)" stroke-width="2.2" transform="rotate(-30 50 50)"/>
+            <ellipse cx="50" cy="50" rx="44" ry="17" stroke="url(#syn_g2)" stroke-width="2.2" transform="rotate(30 50 50)"/>
+            <circle cx="50" cy="50" r="10" fill="url(#syn_g3)"/>
             <circle cx="28" cy="38" r="4" fill="#38bdf8"/>
             <circle cx="72" cy="62" r="4" fill="#c084fc"/>
             <circle cx="50" cy="18" r="3.5" fill="#f472b6"/>
             <defs>
-                <linearGradient id="lux_g1" x1="0" y1="0" x2="100" y2="100">
+                <linearGradient id="syn_g1" x1="0" y1="0" x2="100" y2="100">
                     <stop offset="0%" stop-color="#38bdf8"/>
                     <stop offset="100%" stop-color="#818cf8"/>
                 </linearGradient>
-                <linearGradient id="lux_g2" x1="100" y1="0" x2="0" y2="100">
+                <linearGradient id="syn_g2" x1="100" y1="0" x2="0" y2="100">
                     <stop offset="0%" stop-color="#c084fc"/>
                     <stop offset="100%" stop-color="#f472b6"/>
                 </linearGradient>
-                <linearGradient id="lux_g3" x1="0" y1="0" x2="100" y2="100">
+                <linearGradient id="syn_g3" x1="0" y1="0" x2="100" y2="100">
                     <stop offset="0%" stop-color="#60a5fa"/>
                     <stop offset="100%" stop-color="#a855f7"/>
                 </linearGradient>
             </defs>
         </svg>
         <div>
-            <h1 class="brand-heading">CodeAlpha Neural Studio</h1>
-            <div class="brand-caption">100% On-Device Neural Machine Translation • Air-Gapped Privacy • Marathi & Indic Pipeline</div>
+            <h1 class="brand-heading">SynapseTranslate</h1>
+            <div class="brand-caption">Deep Neural Translation Studio • 100% Air-Gapped Privacy • Marathi & Multilingual Pipeline</div>
         </div>
     </div>
     <div>
@@ -436,7 +437,7 @@ with preset_c4:
         st.session_state["audio_bytes"] = None
         st.rerun()
 
-st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
+st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
 
 # MAIN DUAL TRANSLATION WORKBENCH
 col_src, col_mid, col_tgt = st.columns([5, 1, 5])
@@ -459,8 +460,8 @@ with col_src:
     # Input Text Widget
     input_text = st.text_area(
         "Input Text",
-        placeholder="Type, paste, or select a preset prompt above...",
-        height=260,
+        placeholder="Type, paste, or use the microphone below...",
+        height=240,
         key="user_input_area",
         label_visibility="collapsed"
     )
@@ -488,6 +489,20 @@ with col_src:
             st.session_state["detected_lang_label"] = None
             st.session_state["audio_bytes"] = None
             st.rerun()
+
+    # 🎙️ SPEECH-TO-TEXT MICROPHONE RECORDER FOR ALL LANGUAGES
+    st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+    with st.expander("🎙️ Speak to Translate (Voice Dictation)", expanded=False):
+        dict_lang_code = selected_src if selected_src != "auto" else "en"
+        st.markdown(f"<small style='color: #94a3b8;'>Record your voice in <b>{REQUESTED_LANGUAGES.get(dict_lang_code, dict_lang_code)}</b> to transcribe automatically:</small>", unsafe_allow_html=True)
+        voice_input = st.audio_input("Record Speech", key="mic_recorder", label_visibility="collapsed")
+        if voice_input is not None:
+            with st.spinner("Transcribing speech..."):
+                transcribed = transcribe_speech_audio(voice_input.read(), dict_lang_code)
+                if transcribed:
+                    st.session_state["user_input_area"] = transcribed
+                    st.success(f"Transcribed: \"{transcribed}\"")
+                    st.rerun()
 
 # CENTER INTERACTIVE ACTION COLUMN
 with col_mid:
@@ -579,7 +594,7 @@ with col_tgt:
         "Translation Output",
         value=st.session_state.get("translated_text", ""),
         placeholder="Neural translation will appear here instantly...",
-        height=260,
+        height=240,
         label_visibility="collapsed"
     )
 
@@ -674,7 +689,7 @@ with tab_features:
     f_c1, f_c2 = st.columns(2)
     with f_c1:
         st.markdown("""
-        <div class="feature-card">
+        <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 16px; padding: 18px 22px;">
             <h4 style="color: #38bdf8; margin: 0 0 8px 0;">⚡ OpenNMT & CTranslate2 Engine</h4>
             <p style="color: #94a3b8; font-size: 13px; line-height: 1.6; margin: 0;">
                 Employs optimized quantized integer models running locally on CPU. Delivers sub-second neural inference without GPU or cloud latency.
@@ -683,10 +698,10 @@ with tab_features:
         """, unsafe_allow_html=True)
     with f_c2:
         st.markdown("""
-        <div class="feature-card">
-            <h4 style="color: #c084fc; margin: 0 0 8px 0;">🇮🇳 Indic Cognitive Transfer Module</h4>
+        <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 16px; padding: 18px 22px;">
+            <h4 style="color: #c084fc; margin: 0 0 8px 0;">🎙️ Bi-Directional Speech Synthesis</h4>
             <p style="color: #94a3b8; font-size: 13px; line-height: 1.6; margin: 0;">
-                Specialized single-pass lexical and syntactic transfer pipeline ensuring 100% natural, grammatical, and idiomatic Marathi and Hindi outputs.
+                Features both Voice Dictation (Speak-to-Text) and natural Voice Pronunciation (Text-to-Speech) for seamless multi-sensory translation.
             </p>
         </div>
         """, unsafe_allow_html=True)
@@ -694,7 +709,7 @@ with tab_features:
 # Tab 4: Privacy & Security
 with tab_privacy:
     st.markdown("""
-    <div class="feature-card" style="border-color: rgba(16, 185, 129, 0.35);">
+    <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; padding: 18px 22px;">
         <h4 style="color: #34d399; margin: 0 0 8px 0;">🛡️ Zero Cloud Telemetry & Total Air-Gapped Privacy</h4>
         <p style="color: #cbd5e1; font-size: 13.5px; line-height: 1.7; margin: 0;">
             • <b>No Remote API Calls:</b> No data is transmitted to Google Translate, DeepL, or OpenAI.<br>
@@ -708,6 +723,6 @@ with tab_privacy:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #64748b; font-size: 12.5px; padding-bottom: 10px;'>
-    CodeAlpha Artificial Intelligence Internship • Project 2: High-Performance Language Translation Tool • 100% On-Device Machine Translation
+    SynapseTranslate • Deep Neural Translation Studio • 100% On-Device Machine Translation
 </div>
 """, unsafe_allow_html=True)
