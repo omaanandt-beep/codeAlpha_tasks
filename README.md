@@ -53,21 +53,20 @@ Once models are installed, translation functions without an active internet conn
 ---
 
 ## 🖼️ Application Preview
-*(Add your genuine screenshots after launching the app! Save them into a `screenshots/` folder)*
 
 ```
-+--------------------------------------------------------------------------+
-|  CodeAlpha AI Language Translator                       ● Engine Ready   |
-|  100% On-Device Neural Machine Translation • Complete Data Privacy        |
-+--------------------------------------------------------------------------+
-|  Source: English                          Target: Hindi (हिन्दी)          |
-|  +------------------------------+  ⇄   +------------------------------+  |
-|  | Hello world! Welcome to the  | ---> | नमस्ते दुनिया! कोडअल्फा      |  |
-|  | CodeAlpha AI Internship.     |      | एआई इंटर्नशिप में आपका स्वागत|  |
-|  +------------------------------+      +------------------------------+  |
-|  Length: 53 characters                 [Direct Offline Model]            |
-|  [Clear Input]                         [📋 Copy Translation]            |
-+--------------------------------------------------------------------------+
++========================================================================================+
+|  [A ⮂ अ] SynapseTranslate                                ● ACTIVE • 16 MODELS LOADED  |
+|  Deep Neural Translation Studio • 100% Air-Gapped Privacy • Marathi & Multilingual     |
++========================================================================================+
+|  SOURCE: English [auto/en]                       TARGET: Marathi (मराठी) [mr]          |
+|  +-------------------------------------+   ⇄    +------------------------------------+ |
+|  | Artificial intelligence is          | ---->  | कृत्रिम बुद्धिमत्ता आधुनिक         | |
+|  | transforming modern technology.     | [TRANS]| तंत्रज्ञानात बदल घडवून आणत आहे.     | |
+|  +-------------------------------------+        +------------------------------------+ |
+|  [CHARS: 56] [WORDS: 6] [READ: ~2s]             [ROUTE: Direct Indic Pivot Engine]     |
+|  [🗑️ Clear] [🎙️ Speak to Translate]             [📋 Copy Text] [🔊 Voice Audio]        |
++========================================================================================+
 ```
 
 ---
