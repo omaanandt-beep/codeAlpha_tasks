@@ -4,6 +4,17 @@ translator.py
 Core offline neural machine translation engine.
 Integrates Argos Translate neural models + high-accuracy single-pass Indic transfer for Marathi.
 Handles paragraph/sentence preserving chunking, local language detection, and English pivot routes.
+
+Architectural Note on Marathi (`mr`):
+Argos Translate's index currently lacks an official standalone Marathi model (`en_mr`).
+While small MarianMT/OPUS models (such as Helsinki-NLP/opus-mt-en-mr) exist,
+they are trained on religious/biblical datasets (JW300) and frequently hallucinate
+on technical, conversational, and modern inputs.
+To ensure deterministic, hallucination-free translation without adding multi-gigabyte models,
+SynapseTranslate uses a two-tier Indic pipeline:
+1. Neural Translation: English -> Hindi via Argos Translate's verified OpenNMT neural model.
+2. Indic Morphological & Syntactic Bridge: Single-pass compiled regex transfer mapping Hindi
+   cognates, postpositions, pronouns, verbs, and domain vocabulary to idiomatic Marathi.
 """
 
 import re

@@ -386,7 +386,7 @@ if os.path.exists(LOGO_FILE):
         _b64 = base64.b64encode(_lf.read()).decode("utf-8")
         logo_src = f"data:image/svg+xml;base64,{_b64}"
 
-navbar_html = f"""<div class="hero-navbar"><div class="brand-group"><img src="{logo_src}" class="synapse-logo-svg" width="54" height="54" alt="SynapseTranslate Logo"/><div><h1 class="brand-heading">SynapseTranslate</h1><div class="brand-caption">Deep Neural Translation Studio • 100% Air-Gapped Privacy • Marathi & Multilingual Pipeline</div></div></div><div><span class="neon-status-pill"><span class="pulse-dot"></span>ACTIVE • {installed_count} NEURAL MODELS LOADED</span></div></div>"""
+navbar_html = f"""<div class="hero-navbar"><div class="brand-group"><img src="{logo_src}" class="synapse-logo-svg" width="54" height="54" alt="SynapseTranslate Logo"/><div><h1 class="brand-heading">SynapseTranslate</h1><div class="brand-caption">Deep Neural Translation Studio • Privacy-First On-Device Engine • Marathi & Multilingual Pipeline</div></div></div><div><span class="neon-status-pill"><span class="pulse-dot"></span>ACTIVE • {installed_count} NEURAL MODELS LOADED</span></div></div>"""
 st.markdown(navbar_html, unsafe_allow_html=True)
 
 # INTERACTIVE PROMPT PRESET CHIPS
@@ -712,11 +712,11 @@ with tab_features:
 with tab_privacy:
     st.markdown("""
     <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; padding: 18px 22px;">
-        <h4 style="color: #34d399; margin: 0 0 8px 0;">🛡️ Zero Cloud Telemetry & Total Air-Gapped Privacy</h4>
+        <h4 style="color: #34d399; margin: 0 0 8px 0;">🛡️ Privacy-First Architecture & Data Security</h4>
         <p style="color: #cbd5e1; font-size: 13.5px; line-height: 1.7; margin: 0;">
-            • <b>No Remote API Calls:</b> No data is transmitted to Google Translate, DeepL, or OpenAI.<br>
-            • <b>Air-Gapped Operation:</b> Disconnect your Wi-Fi or Ethernet anytime — translation runs 100% locally on your laptop.<br>
-            • <b>Zero Data Logging:</b> Notes, code snippets, and confidential documents remain solely in memory.
+            • <b>On-Device Neural Translation:</b> Text translation never leaves your computer; all CTranslate2 neural models execute on local CPU.<br>
+            • <b>Zero Text Logging:</b> No input text, confidential documents, or translation outputs are stored on remote servers.<br>
+            • <b>Hybrid Voice Engine:</b> Core text translation is 100% offline; voice dictation and speech playback provide hybrid multi-accent voice enhancement with local system fallback.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -725,6 +725,8 @@ with tab_privacy:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #64748b; font-size: 12.5px; padding-bottom: 10px;'>
-    SynapseTranslate • Deep Neural Translation Studio • 100% On-Device Machine Translation
+    SynapseTranslate • Deep Neural Translation Studio • Privacy-First On-Device AI Engine
+</div>
+""", unsafe_allow_html=True)
 </div>
 """, unsafe_allow_html=True)
