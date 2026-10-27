@@ -122,15 +122,4 @@ pytest tests/ -v
 - **Direct vs. Pivot Routing:** Direct pairs (like English ↔ Hindi) provide the highest accuracy. For pairs where no direct model exists (e.g. Hindi ↔ Japanese), the engine routes through English as an intermediate bridge.
 - **First-Time Download:** Neural model weights range between 40 MB to 120 MB per pair. Ensure adequate disk space when installing all 15 language routes.
 
----
-
-## 📤 Publishing to GitHub via GitHub Desktop
-1. Open **GitHub Desktop**.
-2. Click **File** > **Add Local Repository...** (or press `Ctrl + O`).
-3. Select this folder: `c:\Users\Om Tripathi\Downloads\CodeAlpha_AI_Internship_Projects\CodeAlpha_AI_Internship\CodeAlpha_LanguageTranslationTool`.
-4. If prompted that it's not a git repository, click **Create a Repository here**.
-5. Name: `CodeAlpha_LanguageTranslationTool`.
-6. Write a commit message: `feat: Complete CodeAlpha AI Offline Language Translator`.
-7. Click **Commit to main**.
-8. Click **Publish repository** to push it to your GitHub profile.
 
