@@ -1,0 +1,33 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache & build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Argos Translate model cache & downloaded packages
+.local/
+argos_packages/
+*.argosmodel
+
+# Streamlit runtime & configuration
+.streamlit/
+*.log
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS specific files
+Thumbs.db
+Desktop.ini
+.DS_Store
+

@@ -1,0 +1,132 @@
+# CodeAlpha AI Language Translator 🌐
+
+> **High-Performance Offline Neural Machine Translation Application**  
+> Developed for the **CodeAlpha Artificial Intelligence Internship**.
+
+---
+
+## 📖 Project Overview
+**CodeAlpha AI Language Translator** is a local, privacy-first translation application built with Python, Streamlit, and Argos Translate. Unlike typical translators that send user messages and personal documents across the internet to paid third-party APIs (Google Cloud, OpenAI, DeepL), this application executes neural machine translation **completely on-device**.
+
+Once initial models are installed, translation functions without an active internet connection, guaranteeing zero telemetry, zero data leaks, and zero cost.
+
+---
+
+## ✨ Key Features
+- **100% On-Device Neural Translation:** Powered by OpenNMT and CTranslate2 via Argos Translate.
+- **Complete Privacy & Zero Telemetry:** Input text never leaves your laptop.
+- **Smart Route Detection:** Discovers direct models (`en` ↔ `hi`, `en` ↔ `es`) and automatically establishes English-pivot routes for extended language pairs.
+- **15 Supported Languages:**
+  - English (`en`)
+  - Hindi (`hi`) — हिन्दी
+  - Spanish (`es`) — Español
+  - French (`fr`) — Français
+  - German (`de`) — Deutsch
+  - Italian (`it`) — Italiano
+  - Portuguese (`pt`) — Português
+  - Russian (`ru`) — Русский
+  - Arabic (`ar`) — العربية
+  - Chinese Simplified (`zh`) — 简体中文
+  - Japanese (`ja`) — 日本語
+  - Korean (`ko`) — 한국어
+  - Bengali (`bn`) — বাংলা
+  - Urdu (`ur`) — اردو
+  - Turkish (`tr`) — Türkçe
+- **Formatting & Sentence-Safe Chunking:** Retains paragraph breaks and sentences without cutting words or breaking meaning.
+- **Local Language Auto-Detection:** Purely on-device script detection powered by `langdetect`.
+- **Modern Dark UI:** Responsive Streamlit interface with dark navy styling, subtle violet/blue accents, live character counting, language swapping, and clipboard support.
+
+---
+
+## 🛠️ Technology Stack
+- **Language:** Python (3.10 – 3.14 compatible)
+- **UI Framework:** Streamlit
+- **Translation Engine:** Argos Translate (OpenNMT + CTranslate2)
+- **Language Identification:** `langdetect`
+- **Testing Suite:** Pytest
+
+---
+
+## 🖼️ Application Preview
+*(Add your genuine screenshots after launching the app! Save them into a `screenshots/` folder)*
+
+```
++--------------------------------------------------------------------------+
+|  CodeAlpha AI Language Translator                       ● Engine Ready   |
+|  100% On-Device Neural Machine Translation • Complete Data Privacy        |
++--------------------------------------------------------------------------+
+|  Source: English                          Target: Hindi (हिन्दी)          |
+|  +------------------------------+  ⇄   +------------------------------+  |
+|  | Hello world! Welcome to the  | ---> | नमस्ते दुनिया! कोडअल्फा      |  |
+|  | CodeAlpha AI Internship.     |      | एआई इंटर्नशिप में आपका स्वागत|  |
+|  +------------------------------+      +------------------------------+  |
+|  Length: 53 characters                 [Direct Offline Model]            |
+|  [Clear Input]                         [📋 Copy Translation]            |
++--------------------------------------------------------------------------+
+```
+
+---
+
+## 🚀 Windows PowerShell Setup & Usage Guide
+
+### Step 1: Create and Activate Virtual Environment
+Open PowerShell inside this project folder:
+```powershell
+# Navigate to the workspace (if not already there)
+cd "c:\Users\Om Tripathi\Downloads\CodeAlpha_AI_Internship_Projects\CodeAlpha_AI_Internship\CodeAlpha_LanguageTranslationTool"
+
+# Create a local virtual environment
+python -m venv .venv
+
+# Activate the virtual environment
+.\.venv\Scripts\Activate.ps1
+```
+
+### Step 2: Install Dependencies
+```powershell
+pip install -r requirements.txt
+```
+
+### Step 3: Install Offline Translation Models (One-Time Setup)
+Run the automated model management tool to download and register offline models (e.g. English ↔ Hindi, Spanish, French, German, Chinese, etc.):
+```powershell
+python setup_models.py
+```
+*Note: This step requires an internet connection once to download neural weight packages. Once downloaded, all translation happens 100% offline.*
+
+### Step 4: Launch the Streamlit Web Application
+```powershell
+streamlit run app.py
+```
+The application will launch in your browser at `http://localhost:8501`.
+
+### Step 5: Run Automated Tests
+```powershell
+pytest tests/ -v
+```
+
+---
+
+## 🔒 Privacy & Offline Guarantees
+- **No Remote APIs:** Never calls Google Translate, DeepL, or any external endpoint.
+- **No API Keys:** Does not require tokens, accounts, or subscriptions.
+- **Air-Gapped Ready:** Disconnect your Wi-Fi after Step 3 and test translation — it runs completely offline.
+
+---
+
+## ⚠️ Limitations & Notes
+- **Direct vs. Pivot Routing:** Direct pairs (like English ↔ Hindi) provide the highest accuracy. For pairs where no direct model exists (e.g. Hindi ↔ Japanese), the engine routes through English as an intermediate bridge.
+- **First-Time Download:** Neural model weights range between 40 MB to 120 MB per pair. Ensure adequate disk space when installing all 15 language routes.
+
+---
+
+## 📤 Publishing to GitHub via GitHub Desktop
+1. Open **GitHub Desktop**.
+2. Click **File** > **Add Local Repository...** (or press `Ctrl + O`).
+3. Select this folder: `c:\Users\Om Tripathi\Downloads\CodeAlpha_AI_Internship_Projects\CodeAlpha_AI_Internship\CodeAlpha_LanguageTranslationTool`.
+4. If prompted that it's not a git repository, click **Create a Repository here**.
+5. Name: `CodeAlpha_LanguageTranslationTool`.
+6. Write a commit message: `feat: Complete CodeAlpha AI Offline Language Translator`.
+7. Click **Commit to main**.
+8. Click **Publish repository** to push it to your GitHub profile.
+
