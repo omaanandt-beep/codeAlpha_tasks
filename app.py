@@ -728,5 +728,3 @@ st.markdown("""
     SynapseTranslate • Deep Neural Translation Studio • Privacy-First On-Device AI Engine
 </div>
 """, unsafe_allow_html=True)
-</div>
-""", unsafe_allow_html=True)
