@@ -15,6 +15,7 @@ Features:
 import time
 import os
 import io
+import hashlib
 from typing import Optional
 import streamlit as st
 from translator import OfflineTranslator, TranslationError
@@ -279,6 +280,8 @@ st.markdown("""
 # Speech Recognition & Voice Audio Engines
 def transcribe_speech_audio(audio_bytes: bytes, lang_code: str) -> Optional[str]:
     """Transcribes user spoken voice audio into text using SpeechRecognition for any language."""
+    if not audio_bytes or len(audio_bytes) < 100:
+        return None
     try:
         import speech_recognition as sr
         lang_locale_map = {
@@ -294,7 +297,11 @@ def transcribe_speech_audio(audio_bytes: bytes, lang_code: str) -> Optional[str]
             text = recognizer.recognize_google(audio_data, language=target_locale)
             return text
     except Exception as ex:
-        st.warning(f"Voice recognition note: {ex}")
+        err_msg = str(ex)
+        if "UnknownValueError" in type(ex).__name__ or not err_msg:
+            st.warning("⚠️ Could not detect clear speech. Please speak clearly into the microphone.")
+        else:
+            st.warning(f"Voice recognition note: {err_msg}")
         return None
 
 
@@ -337,6 +344,10 @@ translator = get_translator()
 registry = translator.registry
 
 # Initialize Session State Keys for perfect widget synchronization
+if "pending_input_text" in st.session_state and st.session_state["pending_input_text"] is not None:
+    st.session_state["user_input_area"] = st.session_state["pending_input_text"]
+    st.session_state["pending_input_text"] = None
+
 if "user_input_area" not in st.session_state:
     st.session_state["user_input_area"] = "Hello, how are you today? Welcome to CodeAlpha Artificial Intelligence Internship!"
 if "translated_text" not in st.session_state:
@@ -351,6 +362,8 @@ if "history" not in st.session_state:
     st.session_state["history"] = []
 if "audio_bytes" not in st.session_state:
     st.session_state["audio_bytes"] = None
+if "last_transcribed_audio_hash" not in st.session_state:
+    st.session_state["last_transcribed_audio_hash"] = None
 
 # TOP LUXURY NAVBAR WITH CUSTOM GLOWING 3D VECTOR BRAND LOGO
 installed_count = len(registry.get_installed_codes())
@@ -484,10 +497,11 @@ with col_src:
             st.markdown(f"<div style='font-size: 12px; color: #818cf8; margin-top: 5px; font-weight: 600;'>Detected: <b>{st.session_state['detected_lang_label']}</b></div>", unsafe_allow_html=True)
     with col_meta2:
         if st.button("🗑️ Clear", key="clear_in_btn", use_container_width=True):
-            st.session_state["user_input_area"] = ""
+            st.session_state["pending_input_text"] = ""
             st.session_state["translated_text"] = ""
             st.session_state["detected_lang_label"] = None
             st.session_state["audio_bytes"] = None
+            st.session_state["last_transcribed_audio_hash"] = None
             st.rerun()
 
     # 🎙️ SPEECH-TO-TEXT MICROPHONE RECORDER FOR ALL LANGUAGES
@@ -497,12 +511,19 @@ with col_src:
         st.markdown(f"<small style='color: #94a3b8;'>Record your voice in <b>{REQUESTED_LANGUAGES.get(dict_lang_code, dict_lang_code)}</b> to transcribe automatically:</small>", unsafe_allow_html=True)
         voice_input = st.audio_input("Record Speech", key="mic_recorder", label_visibility="collapsed")
         if voice_input is not None:
-            with st.spinner("Transcribing speech..."):
-                transcribed = transcribe_speech_audio(voice_input.read(), dict_lang_code)
-                if transcribed:
-                    st.session_state["user_input_area"] = transcribed
-                    st.success(f"Transcribed: \"{transcribed}\"")
-                    st.rerun()
+            audio_bytes = voice_input.getvalue()
+            audio_hash = hashlib.md5(audio_bytes).hexdigest()
+            if st.session_state.get("last_transcribed_audio_hash") != audio_hash:
+                with st.spinner("🎙️ Transcribing spoken speech..."):
+                    transcribed = transcribe_speech_audio(audio_bytes, dict_lang_code)
+                    st.session_state["last_transcribed_audio_hash"] = audio_hash
+                    if transcribed:
+                        st.session_state["pending_input_text"] = transcribed
+                        st.session_state["auto_trigger_translate"] = True
+                        st.session_state["last_transcribed_text"] = transcribed
+                        st.rerun()
+                    else:
+                        st.info("No speech detected. Please speak clearly into your microphone.")
 
 # CENTER INTERACTIVE ACTION COLUMN
 with col_mid:
@@ -518,7 +539,7 @@ with col_mid:
             
             st.session_state["src_select_box"] = old_tgt
             st.session_state["tgt_select_box"] = old_src
-            st.session_state["user_input_area"] = curr_out
+            st.session_state["pending_input_text"] = curr_out
             st.session_state["translated_text"] = curr_in
             st.session_state["audio_bytes"] = None
             st.rerun()
@@ -541,7 +562,8 @@ with col_tgt:
     )
 
 # TRANSLATION PROCESSING (Zero-lag immediate execution)
-if translate_clicked:
+auto_trigger = st.session_state.pop("auto_trigger_translate", False)
+if translate_clicked or auto_trigger:
     raw_input = st.session_state.get("user_input_area", "")
     if not raw_input or not raw_input.strip():
         st.warning("Please enter some text to translate.")
@@ -661,7 +683,7 @@ with tab_hist:
             </div>
             """, unsafe_allow_html=True)
             if st.button(f"Load into Editor #{idx+1}", key=f"load_h_{idx}"):
-                st.session_state["user_input_area"] = item["src"]
+                st.session_state["pending_input_text"] = item["src"]
                 st.session_state["translated_text"] = item["trans"]
                 st.session_state["src_select_box"] = item.get("src_code", "en")
                 st.session_state["tgt_select_box"] = item.get("tgt_code", "mr")
