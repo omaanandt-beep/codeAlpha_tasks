@@ -3,7 +3,7 @@ app.py
 ------
 CodeAlpha AI Language Translator
 Modern Streamlit web interface with dark navy styling, local offline translation,
-auto-detection, character counter, language swap, and clipboard integration.
+auto-detection, character counter, language swap, and reliable output display.
 """
 
 import streamlit as st
@@ -189,9 +189,10 @@ with col_src:
         value=st.session_state.source_text,
         placeholder="Type or paste sentences, paragraphs, or notes here...",
         height=250,
-        key="input_text_area",
+        key="input_text_widget",
         label_visibility="collapsed"
     )
+    # Update state from widget
     st.session_state.source_text = input_text
 
     # Character count & Detected Language Indicator
@@ -220,7 +221,7 @@ with col_mid:
             st.session_state.source_lang = old_tgt
             st.session_state.target_lang = old_src
             
-            # Also swap content if translation exists
+            # Swap input and translated text
             old_in = st.session_state.source_text
             st.session_state.source_text = st.session_state.translated_text
             st.session_state.translated_text = old_in
@@ -229,7 +230,7 @@ with col_mid:
     st.markdown("<div style='height: 35px;'></div>", unsafe_allow_html=True)
     translate_clicked = st.button("Translate", type="primary", key="trans_btn", use_container_width=True)
 
-# RIGHT PANEL: Target Language & Output
+# TARGET LANGUAGE SELECTION
 with col_tgt:
     st.markdown("##### Target Language")
     tgt_options = {k: v for k, v in REQUESTED_LANGUAGES.items() if k != selected_src}
@@ -248,49 +249,7 @@ with col_tgt:
     )
     st.session_state.target_lang = selected_tgt
 
-    # Route Badge Display
-    actual_src = st.session_state.source_lang
-    if actual_src == "auto" and st.session_state.detected_lang_label:
-        matching = [k for k, v in REQUESTED_LANGUAGES.items() if v == st.session_state.detected_lang_label]
-        if matching:
-            actual_src = matching[0]
-    
-    badge_label, badge_desc = registry.get_route_description(actual_src, selected_tgt)
-    if "Direct" in badge_label:
-        badge_class = "badge-direct"
-    elif "Pivot" in badge_label:
-        badge_class = "badge-pivot"
-    else:
-        badge_class = "badge-warning"
-
-    # Output text area
-    st.text_area(
-        "Translation Output",
-        value=st.session_state.translated_text,
-        placeholder="Translated text will appear here...",
-        height=250,
-        disabled=True,
-        key="output_text_area",
-        label_visibility="collapsed"
-    )
-
-    col_tc1, col_tc2 = st.columns([1, 1])
-    with col_tc1:
-        st.markdown(f"<span class='badge-route {badge_class}'>{badge_label}</span>", unsafe_allow_html=True)
-        st.markdown(f"<div class='meta-text'>{badge_desc}</div>", unsafe_allow_html=True)
-    with col_tc2:
-        if st.session_state.translated_text:
-            col_b1, col_b2 = st.columns([1, 1])
-            with col_b1:
-                if st.button("Clear Output", key="clear_out_btn", use_container_width=True):
-                    st.session_state.translated_text = ""
-                    st.rerun()
-            with col_b2:
-                # Direct Streamlit copy trigger
-                if st.button("📋 Copy", key="copy_btn", use_container_width=True):
-                    st.toast("Translation copied to clipboard!")
-
-# Execute Translation Action
+# TRANSLATION PROCESSING (Handled before output rendering so output is immediately visible!)
 if translate_clicked:
     raw_input = st.session_state.source_text
     if not raw_input or not raw_input.strip():
@@ -310,11 +269,50 @@ if translate_clicked:
             try:
                 translated_output, route = translator.translate(raw_input, active_source, selected_tgt)
                 st.session_state.translated_text = translated_output
-                st.rerun()
             except TranslationError as te:
                 st.error(f"Translation Error: {te}")
             except Exception as e:
                 st.error(f"Unexpected Error: {e}")
+
+# RIGHT PANEL: Output Rendering (Renders the updated translation immediately!)
+with col_tgt:
+    actual_src = st.session_state.source_lang
+    if actual_src == "auto" and st.session_state.detected_lang_label:
+        matching = [k for k, v in REQUESTED_LANGUAGES.items() if v == st.session_state.detected_lang_label]
+        if matching:
+            actual_src = matching[0]
+    
+    badge_label, badge_desc = registry.get_route_description(actual_src, selected_tgt)
+    if "Direct" in badge_label:
+        badge_class = "badge-direct"
+    elif "Pivot" in badge_label:
+        badge_class = "badge-pivot"
+    else:
+        badge_class = "badge-warning"
+
+    # Display translated output in text area
+    st.text_area(
+        "Translation Output",
+        value=st.session_state.translated_text,
+        placeholder="Translated text will appear here...",
+        height=250,
+        label_visibility="collapsed"
+    )
+
+    col_tc1, col_tc2 = st.columns([1, 1])
+    with col_tc1:
+        st.markdown(f"<span class='badge-route {badge_class}'>{badge_label}</span>", unsafe_allow_html=True)
+        st.markdown(f"<div class='meta-text'>{badge_desc}</div>", unsafe_allow_html=True)
+    with col_tc2:
+        if st.session_state.translated_text:
+            col_b1, col_b2 = st.columns([1, 1])
+            with col_b1:
+                if st.button("Clear Output", key="clear_out_btn", use_container_width=True):
+                    st.session_state.translated_text = ""
+                    st.rerun()
+            with col_b2:
+                if st.button("📋 Copy Text", key="copy_btn", use_container_width=True):
+                    st.toast("Translation copied!")
 
 # Footer
 st.markdown("---")
@@ -323,4 +321,3 @@ st.markdown("""
     CodeAlpha Artificial Intelligence Internship • Project 2: Language Translation Tool • Offline Neural Machine Translation
 </div>
 """, unsafe_allow_html=True)
-
