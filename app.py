@@ -374,79 +374,63 @@ if "audio_bytes" not in st.session_state:
 if "last_transcribed_audio_hash" not in st.session_state:
     st.session_state["last_transcribed_audio_hash"] = None
 
-# TOP LUXURY NAVBAR WITH CUSTOM GLOWING 3D VECTOR BRAND LOGO
+# TOP LUXURY NAVBAR WITH CUSTOM PURPOSE-DEFINED LOGO
 installed_count = len(registry.get_installed_codes())
-st.markdown(f"""
+st.html(f"""
 <div class="hero-navbar">
-    <div class="brand-group">
-        <!-- Purpose-Defined Logo: Multilingual Exchange (A ⮂ अ), Speech Waves, & Neural Synapse -->
-        <svg class="synapse-logo-svg" width="54" height="54" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="bubble_left" x1="15" y1="12" x2="75" y2="70" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#38bdf8"/>
-                    <stop offset="100%" stop-color="#4f46e5"/>
-                </linearGradient>
-                <linearGradient id="bubble_right" x1="45" y1="50" x2="105" y2="108" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#c084fc"/>
-                    <stop offset="100%" stop-color="#f43f5e"/>
-                </linearGradient>
-                <linearGradient id="syn_bridge" x1="35" y1="60" x2="85" y2="60" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#38bdf8"/>
-                    <stop offset="50%" stop-color="#a855f7"/>
-                    <stop offset="100%" stop-color="#f472b6"/>
-                </linearGradient>
-                <filter id="syn_glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="3.5" result="blur"/>
-                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                </filter>
-            </defs>
-            
-            <!-- Air-Gapped Neural Orbit Rings -->
-            <circle cx="60" cy="60" r="54" stroke="url(#syn_bridge)" stroke-width="1.8" stroke-dasharray="5 7" opacity="0.38"/>
-            <circle cx="60" cy="60" r="57" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="1 8" opacity="0.25"/>
-
-            <!-- Left Speech Pod: Source Language (Latin 'A' + Voice Acoustic Waves) -->
-            <path d="M16 22C16 16.4772 20.4772 12 26 12H64C69.5228 12 74 16.4772 74 22V50C74 55.5228 69.5228 60 64 60H38L22 72V60H26C20.4772 60 16 55.5228 16 50V22Z" fill="url(#bubble_left)" fill-opacity="0.28" stroke="url(#bubble_left)" stroke-width="2.4"/>
-            <text x="36" y="44" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="26" fill="#38bdf8">A</text>
-            <!-- Voice Waves on Source Pod -->
-            <path d="M54 26 Q59 33 54 40" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-            <path d="M60 21 Q67 33 60 45" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.6"/>
-
-            <!-- Right Speech Pod: Indic Target (Devanagari 'अ' - Marathi/Hindi & Global Multilingual) -->
-            <path d="M104 98C104 103.523 99.5228 108 94 108H56C50.4772 108 46 103.523 46 98V70C46 64.4772 50.4772 60 56 60H82L98 48V60H94C99.5228 60 104 64.4772 104 70V98Z" fill="url(#bubble_right)" fill-opacity="0.28" stroke="url(#bubble_right)" stroke-width="2.4"/>
-            <text x="76" y="91" font-family="'Plus Jakarta Sans', 'Mangal', 'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="26" fill="#f472b6" text-anchor="middle">अ</text>
-            <!-- Voice Waves on Target Pod -->
-            <path d="M90 74 Q85 81 90 88" stroke="#f472b6" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-            <path d="M96 69 Q89 81 96 93" stroke="#f472b6" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.6"/>
-
-            <!-- Central Neural Synapse Bridge: Bidirectional Language Flux -->
-            <!-- Top Right-bound Neural Flow -->
-            <path d="M42 48 C 50 38, 62 38, 72 48" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-            <polygon points="75,49 67,45 68,52" fill="#38bdf8"/>
-
-            <!-- Bottom Left-bound Neural Flow -->
-            <path d="M78 72 C 70 82, 58 82, 48 72" stroke="#f472b6" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-            <polygon points="45,71 53,75 52,68" fill="#f472b6"/>
-
-            <!-- Glowing Synaptic Core Node -->
-            <circle cx="60" cy="60" r="10" fill="url(#syn_bridge)" fill-opacity="0.3"/>
-            <circle cx="60" cy="60" r="5" fill="#ffffff" filter="url(#syn_glow)"/>
-            <circle cx="48" cy="40" r="2.5" fill="#38bdf8"/>
-            <circle cx="72" cy="80" r="2.5" fill="#f472b6"/>
-        </svg>
-        <div>
-            <h1 class="brand-heading">SynapseTranslate</h1>
-            <div class="brand-caption">Deep Neural Translation Studio • 100% Air-Gapped Privacy • Marathi & Multilingual Pipeline</div>
-        </div>
-    </div>
-    <div>
-        <span class="neon-status-pill">
-            <span class="pulse-dot"></span>
-            ACTIVE • {installed_count} NEURAL MODELS LOADED
-        </span>
-    </div>
+<div class="brand-group">
+<svg class="synapse-logo-svg" width="54" height="54" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="bubble_left" x1="15" y1="12" x2="75" y2="70" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#38bdf8"/>
+<stop offset="100%" stop-color="#4f46e5"/>
+</linearGradient>
+<linearGradient id="bubble_right" x1="45" y1="50" x2="105" y2="108" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#c084fc"/>
+<stop offset="100%" stop-color="#f43f5e"/>
+</linearGradient>
+<linearGradient id="syn_bridge" x1="35" y1="60" x2="85" y2="60" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#38bdf8"/>
+<stop offset="50%" stop-color="#a855f7"/>
+<stop offset="100%" stop-color="#f472b6"/>
+</linearGradient>
+<filter id="syn_glow" x="-20%" y="-20%" width="140%" height="140%">
+<feGaussianBlur stdDeviation="3.5" result="blur"/>
+<feComposite in="SourceGraphic" in2="blur" operator="over"/>
+</filter>
+</defs>
+<circle cx="60" cy="60" r="54" stroke="url(#syn_bridge)" stroke-width="1.8" stroke-dasharray="5 7" opacity="0.38"/>
+<circle cx="60" cy="60" r="57" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="1 8" opacity="0.25"/>
+<path d="M16 22C16 16.4772 20.4772 12 26 12H64C69.5228 12 74 16.4772 74 22V50C74 55.5228 69.5228 60 64 60H38L22 72V60H26C20.4772 60 16 55.5228 16 50V22Z" fill="url(#bubble_left)" fill-opacity="0.28" stroke="url(#bubble_left)" stroke-width="2.4"/>
+<text x="36" y="44" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="26" fill="#38bdf8">A</text>
+<path d="M54 26 Q59 33 54 40" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+<path d="M60 21 Q67 33 60 45" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+<path d="M104 98C104 103.523 99.5228 108 94 108H56C50.4772 108 46 103.523 46 98V70C46 64.4772 50.4772 60 56 60H82L98 48V60H94C99.5228 60 104 64.4772 104 70V98Z" fill="url(#bubble_right)" fill-opacity="0.28" stroke="url(#bubble_right)" stroke-width="2.4"/>
+<text x="76" y="91" font-family="'Plus Jakarta Sans', 'Mangal', 'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="26" fill="#f472b6" text-anchor="middle">अ</text>
+<path d="M90 74 Q85 81 90 88" stroke="#f472b6" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+<path d="M96 69 Q89 81 96 93" stroke="#f472b6" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+<path d="M42 48 C 50 38, 62 38, 72 48" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<polygon points="75,49 67,45 68,52" fill="#38bdf8"/>
+<path d="M78 72 C 70 82, 58 82, 48 72" stroke="#f472b6" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<polygon points="45,71 53,75 52,68" fill="#f472b6"/>
+<circle cx="60" cy="60" r="10" fill="url(#syn_bridge)" fill-opacity="0.3"/>
+<circle cx="60" cy="60" r="5" fill="#ffffff" filter="url(#syn_glow)"/>
+<circle cx="48" cy="40" r="2.5" fill="#38bdf8"/>
+<circle cx="72" cy="80" r="2.5" fill="#f472b6"/>
+</svg>
+<div>
+<h1 class="brand-heading">SynapseTranslate</h1>
+<div class="brand-caption">Deep Neural Translation Studio • 100% Air-Gapped Privacy • Marathi & Multilingual Pipeline</div>
 </div>
-""", unsafe_allow_html=True)
+</div>
+<div>
+<span class="neon-status-pill">
+<span class="pulse-dot"></span>
+ACTIVE • {installed_count} NEURAL MODELS LOADED
+</span>
+</div>
+</div>
+""")
 
 # INTERACTIVE PROMPT PRESET CHIPS
 st.markdown("<div style='font-size: 13px; font-weight: 700; color: #94a3b8; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;'>✨ <b>INTERACTIVE PRESET WORKBENCH:</b> <span style='font-size: 11.5px; color: #64748b; font-weight: 400;'>Click any prompt to instantly test neural pipeline</span></div>", unsafe_allow_html=True)
