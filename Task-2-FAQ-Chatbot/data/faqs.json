@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "hw-01",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why is my laptop running so slow and how can I speed it up?",
+    "alternatives": [
+      "My computer is lagging badly, what can I do?",
+      "How to fix a slow laptop?",
+      "PC running very slow and freezing",
+      "Why is my laptop taking forever to respond?"
+    ],
+    "answer": "A slow computer is usually caused by excessive startup applications, low storage space, overheating, or background resource hogs. To speed it up: 1) Open Task Manager (Ctrl + Shift + Esc) and check CPU/RAM usage; 2) Disable unneeded startup programs in the 'Startup' tab; 3) Free up disk space by removing temporary files or running Disk Cleanup; 4) Check for malware scans; and 5) Ensure cooling vents are dust-free to prevent thermal throttling."
+  },
+  {
+    "id": "hw-02",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "What should I do if my laptop won't turn on or charge?",
+    "alternatives": [
+      "Laptop won't power on at all",
+      "Computer not turning on and screen is black",
+      "Laptop battery not charging when plugged in",
+      "My laptop is completely dead"
+    ],
+    "answer": "If your laptop doesn't power on: 1) Check the power adapter connection and verify the charging indicator LED is lit; 2) Test with a different wall outlet; 3) Perform a hard power reset by disconnecting the charger, holding down the power button for 30 seconds, reconnecting the charger, and turning it back on; 4) Inspect the charging port and cable for physical damage. If the battery is swollen or failing, seek certified hardware repair."
+  },
+  {
+    "id": "hw-03",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why does my laptop fan make loud noises and get extremely hot?",
+    "alternatives": [
+      "Laptop overheating and fan running at full speed",
+      "Noisy fan on my computer",
+      "Computer feels very hot to the touch",
+      "Why is my PC fan loud and buzzing?",
+      "laptop bahut garam ho raha hai",
+      "laptop getting heated up very quickly"
+    ],
+    "answer": "Loud fan noise and overheating occur when dust obstructs airflow or demanding processes stress the CPU/GPU. Steps to fix: 1) Place the laptop on a hard, flat surface rather than beds or pillows; 2) Clean exhaust vents using compressed air (in short bursts while powered off); 3) Open Task Manager to terminate runaway background tasks; 4) Update BIOS and chipset drivers to ensure proper fan curve management."
+  },
+  {
+    "id": "hw-04",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "How do I fix a blue screen of death (BSOD) crash?",
+    "alternatives": [
+      "Computer keeps getting Blue Screen BSOD",
+      "Windows crashed with a blue screen error",
+      "PC reboots randomly with blue screen error code",
+      "How to troubleshoot BSOD on Windows?"
+    ],
+    "answer": "A Blue Screen of Death (BSOD) indicates a critical hardware or kernel driver failure. To resolve it: 1) Note the stop code (e.g., IRQL_NOT_LESS_OR_EQUAL, MEMORY_MANAGEMENT); 2) Restart into Safe Mode if Windows won't boot normally; 3) Run 'sfc /scannow' and 'DISM /Online /Cleanup-Image /RestoreHealth' in an Administrator Command Prompt; 4) Update graphics and motherboard drivers; 5) Test RAM integrity using Windows Memory Diagnostic (mdsched.exe)."
+  },
+  {
+    "id": "hw-05",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why is my laptop keyboard or touchpad not responding?",
+    "alternatives": [
+      "Trackpad stopped working on my laptop",
+      "Keys not typing on keyboard",
+      "Mouse cursor won't move using touchpad",
+      "Laptop keyboard frozen"
+    ],
+    "answer": "If the built-in keyboard or touchpad stops working: 1) Check if the touchpad was accidentally disabled via function keys (e.g., Fn + F7 or F9 depending on laptop brand); 2) Connect an external USB mouse or keyboard to verify OS responsiveness; 3) Open Device Manager (Win + X > Device Manager), expand 'Keyboards' and 'Mice', right-click the device, and select 'Update driver' or 'Uninstall device', then reboot; 4) Run the Windows Keyboard troubleshooter in Settings."
+  },
+  {
+    "id": "hw-06",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "How do I connect an external monitor or dual displays to my computer?",
+    "alternatives": [
+      "External display not detected on laptop",
+      "How to set up second monitor in Windows?",
+      "Dual screen setup not showing picture",
+      "Second monitor says no signal"
+    ],
+    "answer": "To set up an external monitor: 1) Connect the HDMI, DisplayPort, or USB-C cable securely between the computer and monitor; 2) Ensure the monitor is powered on and set to the correct input source; 3) Press Win + P on your keyboard to choose 'Duplicate' or 'Extend'; 4) If no signal is received, go to Settings > System > Display > Multiple displays and click 'Detect'; 5) Update your graphics card drivers."
+  },
+  {
+    "id": "hw-07",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why is my computer speaker producing no sound or crackling audio?",
+    "alternatives": [
+      "No sound on my computer",
+      "Audio not working on laptop speakers or headphones",
+      "Sound is crackling or distorted on PC",
+      "How to fix audio problems in Windows?"
+    ],
+    "answer": "To restore sound: 1) Check the taskbar speaker icon to ensure volume is not muted or set to zero; 2) Click the sound icon and verify the correct output device (e.g., Realtek Speakers vs HDMI/Headphones) is selected; 3) Run the Windows Audio Troubleshooter (Settings > System > Sound > Troubleshoot); 4) Reinstall or update the audio driver in Device Manager under 'Sound, video and game controllers'; 5) Disable audio enhancements in Sound Settings if experiencing crackling."
+  },
+  {
+    "id": "sw-01",
+    "category": "Software Installation and Updates",
+    "question": "How do I fix a software installation that keeps failing or freezing?",
+    "alternatives": [
+      "Program won't install on Windows",
+      "Installer freezes during installation",
+      "Software setup failed error",
+      "Why can't I install an application on my PC?"
+    ],
+    "answer": "If software installation fails: 1) Right-click the installer executable and choose 'Run as administrator'; 2) Verify sufficient free storage space exists on the installation drive; 3) Check that your OS meets the program's minimum system requirements (e.g., 64-bit architecture, specific runtime libraries like .NET or Visual C++ Redistributable); 4) Temporarily pause third-party antivirus that may falsely block setup files; 5) Re-download the setup installer in case of corruption."
+  },
+  {
+    "id": "sw-02",
+    "category": "Software Installation and Updates",
+    "question": "How do I completely uninstall an application and remove its leftover files?",
+    "alternatives": [
+      "How to cleanly remove software from PC?",
+      "Uninstall program that won't go away",
+      "How do I uninstall an app in Windows 11/10?",
+      "Delete software remnants and leftover registry files"
+    ],
+    "answer": "To uninstall an application: 1) Go to Settings > Apps > Installed apps (or Control Panel > Programs and Features); 2) Locate the software, click the three dots, and choose 'Uninstall'; 3) Follow the wizard; 4) To remove leftover cache and config folders, check '%AppData%' and '%LocalAppData%' via the Run dialog (Win + R) and delete the folder associated with the removed vendor; 5) Restart your computer."
+  },
+  {
+    "id": "sw-03",
+    "category": "Software Installation and Updates",
+    "question": "How do I fix Windows Update when it gets stuck downloading or installing?",
+    "alternatives": [
+      "Windows update stuck at 0% or failing with error code",
+      "Updates won't install on Windows",
+      "Windows update loop or frozen",
+      "How to reset Windows Update components?"
+    ],
+    "answer": "If Windows Update is stuck: 1) Run the built-in troubleshooter at Settings > System > Troubleshoot > Other troubleshooters > Windows Update; 2) Restart the Windows Update service: Open Command Prompt as Admin and run 'net stop wuauserv', 'net stop bits', then delete files in 'C:\\Windows\\SoftwareDistribution', and restart services with 'net start wuauserv' and 'net start bits'; 3) Ensure at least 15-20 GB of free disk space is available."
+  },
+  {
+    "id": "sw-04",
+    "category": "Software Installation and Updates",
+    "question": "Why won't an older software program run on modern Windows 10 or 11?",
+    "alternatives": [
+      "Old program not compatible with Windows 11",
+      "How to run legacy software on modern Windows?",
+      "Software compatibility issue with new OS",
+      "How to use Windows Compatibility Mode?"
+    ],
+    "answer": "To run older software on modern Windows: 1) Right-click the application's executable or shortcut and select 'Properties'; 2) Switch to the 'Compatibility' tab; 3) Check 'Run this program in compatibility mode for' and pick Windows 7 or Windows XP; 4) Check 'Run this program as an administrator'; 5) Click 'Change high DPI settings' if UI fonts appear blurry; 6) Click Apply and launch the application."
+  },
+  {
+    "id": "sw-05",
+    "category": "Software Installation and Updates",
+    "question": "What should I do if an application crashes immediately upon opening?",
+    "alternatives": [
+      "App closes immediately after launching",
+      "Program crashes on startup",
+      "Software opens and shuts down right away",
+      "Application stopped working as soon as opened"
+    ],
+    "answer": "When an app crashes on startup: 1) Check Windows Event Viewer (Event Viewer > Windows Logs > Application) to see the crash fault module or exception code; 2) Update your graphics card drivers and reinstall Microsoft Visual C++ Redistributable packages (both x86 and x64); 3) Try running the application as Administrator; 4) Delete the application's local user configuration cache in %AppData%; 5) Reinstall the application."
+  },
+  {
+    "id": "sw-06",
+    "category": "Software Installation and Updates",
+    "question": "How do I safely install Python and verify pip works on Windows?",
+    "alternatives": [
+      "How to set up Python on Windows?",
+      "pip is not recognized as an internal or external command",
+      "How to install Python and add to PATH?",
+      "Python environment setup troubleshooting"
+    ],
+    "answer": "To install Python properly on Windows: 1) Download the official installer from python.org; 2) Crucial step: on the initial install screen, check the box 'Add python.exe to PATH'; 3) Select Customize installation and ensure pip and IDLE are checked; 4) Complete the setup and click 'Disable path length limit'; 5) Open a new PowerShell terminal and verify by running 'python --version' and 'pip --version'."
+  },
+  {
+    "id": "sw-07",
+    "category": "Software Installation and Updates",
+    "question": "How do I stop apps from opening automatically when my computer boots?",
+    "alternatives": [
+      "Disable startup programs in Windows",
+      "Too many apps launching when PC starts",
+      "How to turn off startup apps?",
+      "Stop software from opening on startup"
+    ],
+    "answer": "To disable startup apps: 1) Press Ctrl + Shift + Esc to open Task Manager; 2) Click on the 'Startup apps' tab (speedometer or list icon); 3) Review the 'Startup impact' column; 4) Right-click any non-essential application (such as Spotify, Discord, or Steam) and select 'Disable'; 5) Alternatively, manage them in Windows Settings > Apps > Startup."
+  },
+  {
+    "id": "net-01",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "Why does my Wi-Fi say 'Connected, no internet access'?",
+    "alternatives": [
+      "Connected to Wi-Fi but websites won't load",
+      "No internet access on wireless network",
+      "Wi-Fi icon has an exclamation point or globe icon",
+      "How to fix Connected No Internet error?",
+      "wifi connect nahi ho raha",
+      "internet nahi chal raha"
+    ],
+    "answer": "The 'Connected, no internet' status means your device is linked to the router, but the router cannot communicate with your Internet Service Provider. To fix: 1) Restart both your modem and Wi-Fi router by unplugging them for 30 seconds; 2) Disconnect and reconnect to the Wi-Fi network; 3) Open Command Prompt as Administrator and flush DNS by typing 'ipconfig /flushdns', followed by 'netsh winsock reset'; 4) Restart your computer."
+  },
+  {
+    "id": "net-02",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I fix slow internet and high ping latency?",
+    "alternatives": [
+      "Internet speed is very slow",
+      "High ping and lag on my Wi-Fi",
+      "Why is my download speed so slow?",
+      "How to boost Wi-Fi speed at home?"
+    ],
+    "answer": "To address slow internet speeds: 1) Connect to the 5 GHz Wi-Fi band instead of 2.4 GHz for higher throughput; 2) Position your computer closer to the router or use an Ethernet cable for a direct connection; 3) Check for background cloud syncs or game updates consuming bandwidth; 4) Reboot the router; 5) Run a speed test at speedtest.net to verify whether speeds match your ISP subscription plan."
+  },
+  {
+    "id": "net-03",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "What should I do if my Wi-Fi keeps disconnecting and reconnecting?",
+    "alternatives": [
+      "Wireless network drops connection randomly",
+      "Wi-Fi keeps dropping every few minutes",
+      "Unstable Wi-Fi connection on laptop",
+      "Why does my computer keep disconnecting from Wi-Fi?"
+    ],
+    "answer": "If Wi-Fi repeatedly drops: 1) Go to Device Manager > Network adapters, right-click your Wi-Fi card > Properties > Power Management tab, and uncheck 'Allow the computer to turn off this device to save power'; 2) Update your Wi-Fi adapter drivers from the manufacturer's website (Intel, Realtek, or Qualcomm); 3) Forget the Wi-Fi network and reconnect with the password; 4) Change your router's wireless channel in router settings to reduce local radio interference."
+  },
+  {
+    "id": "net-04",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I change DNS servers to Google DNS or Cloudflare for faster browsing?",
+    "alternatives": [
+      "How to configure DNS in Windows?",
+      "Switch to Cloudflare DNS 1.1.1.1 or Google 8.8.8.8",
+      "Fix DNS probe finished nxdomain error",
+      "Change DNS settings on computer"
+    ],
+    "answer": "To change DNS servers in Windows: 1) Go to Settings > Network & internet > Wi-Fi (or Ethernet); 2) Click 'Hardware properties'; 3) Beside 'DNS server assignment', click 'Edit' and select 'Manual'; 4) Toggle on IPv4; 5) For Cloudflare, enter Preferred: 1.1.1.1, Alternate: 1.0.0.1; for Google DNS, enter Preferred: 8.8.8.8, Alternate: 8.8.4.4; 6) Save settings and flush DNS by running 'ipconfig /flushdns' in Command Prompt."
+  },
+  {
+    "id": "net-05",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "Why is my Wi-Fi adapter missing or not showing up in Windows?",
+    "alternatives": [
+      "Wi-Fi icon disappeared completely",
+      "No Wi-Fi option in settings or taskbar",
+      "Wireless adapter not found in Device Manager",
+      "Can't turn on Wi-Fi"
+    ],
+    "answer": "When the Wi-Fi adapter option disappears: 1) Perform a cold restart (shut down completely, unplug power for 60 seconds, turn back on); 2) Open Device Manager, click Action > 'Scan for hardware changes'; 3) Look under Network adapters for warning triangles; right-click and select 'Enable device'; 4) If listed as an unknown device, download the official Wi-Fi driver on a phone or other PC, transfer via USB, and install it; 5) Check physical wireless toggle switch on laptop if present."
+  },
+  {
+    "id": "net-06",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I find my computer's local IP address and default gateway?",
+    "alternatives": [
+      "How to check my IP address in Windows?",
+      "Find router default gateway IP",
+      "What is my local IP address?",
+      "Where to find IPv4 address in Command Prompt?"
+    ],
+    "answer": "To find your network IP details: 1) Press Win + R, type 'cmd', and press Enter; 2) Type 'ipconfig' and press Enter; 3) Look under your active network adapter (Wi-Fi or Ethernet) for: 'IPv4 Address' (your computer's local IP, typically 192.168.x.x or 10.x.x.x) and 'Default Gateway' (your router's administrative IP address)."
+  },
+  {
+    "id": "net-07",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I test network connectivity and packet loss using ping and traceroute?",
+    "alternatives": [
+      "How to run a ping test?",
+      "Diagnose packet loss in Windows cmd",
+      "How to use tracert to diagnose network issues?",
+      "Test internet connection stability"
+    ],
+    "answer": "To test connectivity: 1) Open Command Prompt; 2) Type 'ping 8.8.8.8 -n 10' to send 10 packets to Google DNS. Check the 'Lost' count (packet loss should be 0%) and latency average; 3) Type 'ping google.com' to test DNS resolution; 4) Type 'tracert google.com' to trace each network hop between your machine and the destination server, helping identify where latency or timeout drops happen."
+  },
+  {
+    "id": "acc-01",
+    "category": "Account Access and Password Issues",
+    "question": "What should I do if I forgot my Windows login password or PIN?",
+    "alternatives": [
+      "Locked out of Windows account",
+      "Forgot my computer password how to reset?",
+      "Can't sign in to Windows PIN not working",
+      "Reset Windows login credentials"
+    ],
+    "answer": "If locked out of Windows: 1) For Microsoft Accounts, click 'I forgot my PIN/password' on the login screen or reset it from another device at account.live.com/password/reset; 2) For local accounts with security questions set, enter an incorrect password, click 'Reset password', and answer your security prompts; 3) If you have a second Administrator account on the PC, sign into it to reset the password for the locked user account."
+  },
+  {
+    "id": "acc-02",
+    "category": "Account Access and Password Issues",
+    "question": "How do I set up two-factor authentication (2FA) to secure my accounts?",
+    "alternatives": [
+      "How to enable 2FA / MFA on my online accounts?",
+      "What is two-step verification and how to use it?",
+      "Best way to secure accounts with authenticator app",
+      "Enable multi factor authentication"
+    ],
+    "answer": "To set up Two-Factor Authentication (2FA): 1) Download an authenticator app (such as Google Authenticator, Microsoft Authenticator, or Aegis) on your smartphone; 2) In your online account (Google, GitHub, banking), go to Security Settings > 2-Step Verification; 3) Choose 'Authenticator App' and scan the QR code displayed on screen; 4) Enter the 6-digit confirmation code generated by the app; 5) Save your backup recovery codes securely in an offline location."
+  },
+  {
+    "id": "acc-03",
+    "category": "Account Access and Password Issues",
+    "question": "What is the best way to create and manage strong passwords safely?",
+    "alternatives": [
+      "How to create an unhackable strong password?",
+      "Should I use a password manager?",
+      "Best practices for password security",
+      "How to stop forgetting complicated passwords?"
+    ],
+    "answer": "Best practices for passwords: 1) Use a passphrase of 4-5 random words (e.g., 'cactus-ocean-battery-staple') or a 16+ character string with mixed case, numbers, and symbols; 2) Never reuse passwords across accounts; 3) Use a reputable password manager (such as Bitwarden, 1Password, or KeePass) to generate and store credentials encrypted; 4) Enable biometrics or a strong master password on your vault."
+  },
+  {
+    "id": "acc-04",
+    "category": "Account Access and Password Issues",
+    "question": "What steps should I take if I suspect my email or online account was hacked?",
+    "alternatives": [
+      "My email was compromised, what do I do?",
+      "Someone hacked my account",
+      "Suspicious activity on my Google account",
+      "How to recover a hacked account?"
+    ],
+    "answer": "If your account was compromised: 1) Immediately attempt to change the password from a secure device; 2) Go to account security settings and select 'Sign out of all sessions/devices'; 3) Review linked recovery email addresses and phone numbers to ensure attackers didn't alter them; 4) Enable 2FA immediately; 5) Check for unauthorized email forwarding rules or filters; 6) Notify affected contacts if spam was sent from your address."
+  },
+  {
+    "id": "acc-05",
+    "category": "Account Access and Password Issues",
+    "question": "How do I switch from a Microsoft Account to a Local Account in Windows?",
+    "alternatives": [
+      "Use local account instead of Microsoft account on Windows",
+      "How to unlink Microsoft account from PC?",
+      "Convert Windows user to local offline account",
+      "Sign in with local account Windows 11"
+    ],
+    "answer": "To switch to a local account: 1) Open Settings > Accounts > Your info; 2) Look for the link 'Sign in with a local account instead' (under Account settings); 3) Confirm your current Microsoft account password; 4) Choose your new local username, set a password and password hint; 5) Click 'Sign out and finish' to complete the transition."
+  },
+  {
+    "id": "acc-06",
+    "category": "Account Access and Password Issues",
+    "question": "How do I create a new user profile with Administrator rights in Windows?",
+    "alternatives": [
+      "Add new admin account on Windows PC",
+      "Create another user account Windows 10/11",
+      "How to grant administrator privileges to user?",
+      "Make user account an admin"
+    ],
+    "answer": "To create a new Admin account: 1) Go to Settings > Accounts > Other users; 2) Click 'Add account'; 3) Choose 'I don't have this person's sign-in information' > 'Add a user without a Microsoft account'; 4) Enter a username and password; 5) Once created, select the new account, click 'Change account type', and change it from 'Standard User' to 'Administrator'."
+  },
+  {
+    "id": "acc-07",
+    "category": "Account Access and Password Issues",
+    "question": "How do I clear saved passwords and autofill data from my web browser?",
+    "alternatives": [
+      "Remove saved passwords from Chrome or Edge",
+      "How to delete autofill login credentials in browser?",
+      "Clear stored website passwords",
+      "Delete password history in browser"
+    ],
+    "answer": "To remove saved passwords: 1) In Google Chrome or Microsoft Edge, press Ctrl + Shift + Delete; 2) Switch to the 'Advanced' tab; 3) Set time range to 'All time'; 4) Check 'Passwords and other sign-in data' and 'Autofill form data'; 5) Click 'Clear data'. You can also view and selectively delete individual saved entries in chrome://password-manager/passwords or edge://wallet/passwords."
+  },
+  {
+    "id": "file-01",
+    "category": "File Management and Backups",
+    "question": "What is the 3-2-1 backup strategy and how do I implement it?",
+    "alternatives": [
+      "Best way to back up my computer files",
+      "Explain the 3 2 1 backup rule",
+      "How should I protect my data from loss?",
+      "Safe backup strategy for personal files"
+    ],
+    "answer": "The 3-2-1 backup rule states: 1) Keep 3 copies of your data (1 primary copy and 2 backups); 2) Store them on 2 different types of storage media (e.g., your computer's internal SSD and an external USB hard drive); 3) Keep 1 copy off-site (such as a secure cloud backup service like OneDrive, Google Drive, or Backblaze) to protect against physical disaster, theft, or ransomware."
+  },
+  {
+    "id": "file-02",
+    "category": "File Management and Backups",
+    "question": "How do I recover an accidentally deleted file on Windows?",
+    "alternatives": [
+      "How to restore deleted files?",
+      "Accidentally emptied Recycle Bin how to recover?",
+      "Retrieve deleted document in Windows",
+      "Can I get back a permanently deleted file?"
+    ],
+    "answer": "To recover deleted files: 1) First check the Recycle Bin on your desktop, right-click the file and click 'Restore'; 2) If emptied, check OneDrive or cloud version history; 3) Right-click the folder where the file used to reside, choose Properties > 'Previous Versions' tab to restore a shadow copy; 4) Use Microsoft's official free tool 'Windows File Recovery' from the Microsoft Store, or reputable software like Recuva; 5) Stop writing new data to the drive immediately to prevent overwriting."
+  },
+  {
+    "id": "file-03",
+    "category": "File Management and Backups",
+    "question": "How do I safely free up disk space on my C drive when it is full?",
+    "alternatives": [
+      "C drive is red and out of space",
+      "How to clean up disk space on Windows?",
+      "Computer low on storage space",
+      "Free up space on hard drive"
+    ],
+    "answer": "To free up C drive space safely: 1) Open Settings > System > Storage and enable 'Storage Sense'; 2) Click 'Temporary files' and remove previous Windows installations, temporary setup files, and downloads; 3) Run 'cleanmgr' (Disk Cleanup) as Administrator and select system files; 4) Move large personal video, photo, or game libraries to a secondary drive; 5) Use free analysis tools like TreeSize Free or WizTree to identify hidden bulky folders."
+  },
+  {
+    "id": "file-04",
+    "category": "File Management and Backups",
+    "question": "How do I zip and unzip compressed folders on Windows without extra software?",
+    "alternatives": [
+      "How to extract a zip file on Windows?",
+      "Create a zip archive folder in Windows",
+      "Uncompress zip file without WinRAR",
+      "How to open .zip files?"
+    ],
+    "answer": "Windows natively supports ZIP files: 1) To compress: select the files or folders, right-click, and select 'Compress to ZIP file' (or Send to > Compressed (zipped) folder); 2) To extract: right-click the .zip archive, select 'Extract All...', choose the destination folder, and click 'Extract'. No third-party tools like WinRAR or 7-Zip are required for standard .zip files."
+  },
+  {
+    "id": "file-05",
+    "category": "File Management and Backups",
+    "question": "How do I fix the 'File is open in another program' error when deleting?",
+    "alternatives": [
+      "Can't delete file because it is in use",
+      "File in use error Windows cannot delete",
+      "Force delete locked file in Windows",
+      "The action can't be completed because the file is open"
+    ],
+    "answer": "To delete a locked file: 1) Ensure the application that opened it is closed; 2) Open Task Manager, locate any background process associated with the file (e.g., Word, Adobe Acrobat, Python), and end task; 3) If the locking process is unknown, use Microsoft PowerToys 'File Locksmith' utility or Sysinternals Process Explorer to identify the handle; 4) Alternatively, restart your PC in Safe Mode and delete the file."
+  },
+  {
+    "id": "file-06",
+    "category": "File Management and Backups",
+    "question": "How do I configure File History for automated local backups in Windows?",
+    "alternatives": [
+      "How to use Windows File History?",
+      "Set up automatic backup to external hard drive",
+      "Back up Documents and Pictures automatically in Windows",
+      "File History configuration guide"
+    ],
+    "answer": "To set up File History: 1) Connect an external hard drive; 2) Go to Control Panel > System and Security > File History; 3) Select your external drive as the backup target; 4) Click 'Turn on'; 5) Use 'Advanced settings' to choose backup frequency (e.g., hourly or daily) and version retention period. Windows will now automatically preserve versioned snapshots of your user libraries."
+  },
+  {
+    "id": "file-07",
+    "category": "File Management and Backups",
+    "question": "How do I safely format a USB flash drive or external drive?",
+    "alternatives": [
+      "Format USB drive in Windows",
+      "Which file system should I format USB: NTFS, FAT32, or exFAT?",
+      "Wipe flash drive and change format",
+      "How to format thumb drive?"
+    ],
+    "answer": "To format a USB drive: 1) Back up any valuable files, as formatting erases all data; 2) Open File Explorer > This PC, right-click the USB drive and select 'Format...'; 3) Choose the File System: 'exFAT' for universal compatibility between Windows and macOS with files >4GB, 'FAT32' for legacy compatibility (4GB file size limit), or 'NTFS' for Windows-only drives; 4) Check 'Quick Format' and click Start."
+  },
+  {
+    "id": "os-01",
+    "category": "Operating-System Issues",
+    "question": "How do I boot Windows into Safe Mode to troubleshoot problems?",
+    "alternatives": [
+      "How to enter Safe Mode in Windows 10/11?",
+      "Boot into safe mode when PC won't start normally",
+      "Access Windows Safe Mode troubleshooting",
+      "How to restart in safe mode?"
+    ],
+    "answer": "To enter Safe Mode: 1) Hold the Shift key while clicking Restart on the Start Menu or login screen; 2) Your PC will reboot to the 'Choose an option' screen; 3) Navigate to Troubleshoot > Advanced options > Startup Settings > click Restart; 4) When the numbered list appears, press '4' for Safe Mode or '5' for Safe Mode with Networking."
+  },
+  {
+    "id": "os-02",
+    "category": "Operating-System Issues",
+    "question": "How do I use System File Checker (SFC) and DISM to repair corrupt Windows files?",
+    "alternatives": [
+      "Run sfc scannow to fix corrupted Windows files",
+      "How to repair Windows image using DISM?",
+      "Fix corrupted system files in Windows cmd",
+      "How to use SFC and DISM commands?"
+    ],
+    "answer": "To repair system file corruption: 1) Press Win + X and select 'Terminal (Admin)' or 'Command Prompt (Admin)'; 2) First run the DISM repair command: 'DISM /Online /Cleanup-Image /RestoreHealth' and wait for it to complete; 3) Then run the System File Checker command: 'sfc /scannow'; 4) Wait until verification reaches 100%. If corrupted files were found and repaired, restart your computer."
+  },
+  {
+    "id": "os-03",
+    "category": "Operating-System Issues",
+    "question": "How do I use System Restore to roll back Windows to an earlier working state?",
+    "alternatives": [
+      "How to restore PC to earlier date with System Restore?",
+      "Roll back Windows update or bad driver",
+      "Use System Restore point in Windows",
+      "Undo recent system changes Windows"
+    ],
+    "answer": "To use System Restore: 1) Press Win + R, type 'rstrui.exe', and press Enter; 2) The System Restore wizard will open; click 'Next'; 3) Select a restore point created prior to when your issue started (check 'Show more restore points' if available); 4) Click 'Scan for affected programs' to see which updates or apps will be removed; 5) Click Finish. Note: personal files and documents will not be affected."
+  },
+  {
+    "id": "os-04",
+    "category": "Operating-System Issues",
+    "question": "Why is my Windows search bar or Start menu freezing or not working?",
+    "alternatives": [
+      "Start menu won't open in Windows 11/10",
+      "Search bar not typing or responding in taskbar",
+      "Windows search indexed stopped working",
+      "How to fix broken Start menu?"
+    ],
+    "answer": "If the Start Menu or Search bar freezes: 1) Press Ctrl + Shift + Esc to open Task Manager, locate 'Windows Explorer' under Processes, right-click and click 'Restart'; 2) Open Task Manager > Services tab, find 'WSearch', right-click and restart it; 3) Run the Search troubleshooter in Settings > System > Troubleshoot > Other troubleshooters > Search and Indexing; 4) As a last resort, re-register Start Menu components via PowerShell."
+  },
+  {
+    "id": "os-05",
+    "category": "Operating-System Issues",
+    "question": "How do I enable or disable dark mode in Windows 10 and 11?",
+    "alternatives": [
+      "Switch Windows to dark theme",
+      "Turn on dark mode in Windows settings",
+      "Change light mode to dark mode PC",
+      "How to enable dark theme?"
+    ],
+    "answer": "To enable Dark Mode: 1) Press Win + I to open Settings; 2) Navigate to 'Personalization' in the left menu; 3) Click on 'Colors'; 4) Under 'Choose your mode', click the dropdown and choose 'Dark' (or choose 'Custom' to set Windows UI to dark while keeping apps light); 5) Your taskbar, Start menu, File Explorer, and native apps will immediately apply dark theme."
+  },
+  {
+    "id": "os-06",
+    "category": "Operating-System Issues",
+    "question": "What should I do if Windows says 'Disk 100% usage' in Task Manager?",
+    "alternatives": [
+      "Task manager shows 100 percent disk usage",
+      "Hard drive pegged at 100% and lagging",
+      "Why is my disk usage always 100% in Windows?",
+      "Fix 100% disk usage bug"
+    ],
+    "answer": "To fix 100% disk usage: 1) Identify the consuming process in Task Manager sorted by the Disk column; 2) Temporarily disable Windows Search service to test if indexing is stuck (run 'net.exe stop \"Windows Search\"' in admin cmd); 3) Disable SysMain service ('net.exe stop sysmain') which frequently causes high disk I/O on mechanical HDDs; 4) Run 'chkdsk C: /f /r' to check for physical drive bad sectors; 5) Upgrade mechanical hard drives (HDD) to a modern SSD for permanent relief."
+  },
+  {
+    "id": "os-07",
+    "category": "Operating-System Issues",
+    "question": "How do I perform a clean 'Reset this PC' without losing personal files?",
+    "alternatives": [
+      "Reset Windows without losing files",
+      "How to factory reset Windows while keeping my files?",
+      "Reset this PC keep files option",
+      "Reinstall Windows without data loss",
+      "Factory reset Windows 10/11"
+    ],
+    "answer": "To reset Windows while keeping personal files: 1) Go to Settings > System > Recovery; 2) Beside 'Reset this PC', click 'Reset PC'; 3) Choose 'Keep my files' (this removes apps and settings, but preserves personal documents and media); 4) Choose 'Cloud download' for a fresh Windows image or 'Local reinstall'; 5) Follow the prompt and confirm. Note: always maintain an external backup as best practice before running any OS reset."
+  },
+  {
+    "id": "app-01",
+    "category": "Application Errors",
+    "question": "How do I fix 'MSVCP140.dll or VCRUNTIME140.dll is missing' error?",
+    "alternatives": [
+      "VCRUNTIME140.dll not found error",
+      "Missing DLL error when launching game or app",
+      "How to fix MSVCP140.dll was not found?",
+      "Program can't start because dll is missing"
+    ],
+    "answer": "This error occurs when the Microsoft Visual C++ Redistributable runtime required by the application is not installed. To fix: 1) Go to Microsoft's official website and download the 'Visual C++ Redistributable for Visual Studio 2015-2022'; 2) Important: Install BOTH the x86 (vc_redist.x86.exe) and x64 (vc_redist.x64.exe) packages on 64-bit Windows; 3) Restart your PC; 4) Avoid downloading standalone DLL files from unofficial third-party websites, as they often contain malware."
+  },
+  {
+    "id": "app-02",
+    "category": "Application Errors",
+    "question": "How do I force quit a frozen program that won't close?",
+    "alternatives": [
+      "App is not responding how to force close?",
+      "Program frozen can't close window",
+      "Kill stuck process in Windows",
+      "How to force close an app without restarting?"
+    ],
+    "answer": "To force close a frozen program: 1) Press Ctrl + Shift + Esc to open Task Manager; 2) Locate the unresponsive app under the 'Processes' tab; 3) Click the app and click the 'End task' button in the upper right; 4) Alternatively, press Alt + F4 while the frozen window is focused; 5) For persistent stubborn tasks, open Command Prompt and run 'taskkill /f /im <app_name>.exe' (e.g. taskkill /f /im chrome.exe)."
+  },
+  {
+    "id": "app-03",
+    "category": "Application Errors",
+    "question": "Why does Google Chrome or Edge keep showing 'Aw, Snap!' or 'STATUS_ACCESS_VIOLATION'?",
+    "alternatives": [
+      "Web browser tabs crashing constantly",
+      "Chrome Aw Snap error code",
+      "STATUS ACCESS VIOLATION in Edge or Chrome",
+      "Browser page crashes every time I load website"
+    ],
+    "answer": "To fix browser tab crashes: 1) Disable browser extensions one by one (chrome://extensions or edge://extensions), especially ad-blockers or script injectors, to identify the culprit; 2) Clear cache and cookies via Ctrl + Shift + Delete; 3) Turn off hardware acceleration in Settings > System > 'Use graphics acceleration when available'; 4) Update your browser to the latest version; 5) Check for faulty RAM with Windows Memory Diagnostic."
+  },
+  {
+    "id": "app-04",
+    "category": "Application Errors",
+    "question": "How do I fix Microsoft Office or Word 'Unlicensed Product' or activation errors?",
+    "alternatives": [
+      "Word says Unlicensed Product",
+      "Microsoft 365 activation error",
+      "Excel unlicensed product warning banner",
+      "How to fix Office activation problems?"
+    ],
+    "answer": "To resolve Office activation errors: 1) Verify you are signed into Office with the exact email address associated with your subscription (File > Account); 2) Check your computer's date, time, and time zone in Windows Settings (inaccurate clocks prevent SSL license verification); 3) Run Office as Administrator and click 'Update Options > Update Now'; 4) Run the Microsoft Support and Recovery Assistant (SaRA) tool from Microsoft."
+  },
+  {
+    "id": "app-05",
+    "category": "Application Errors",
+    "question": "Why is my Zoom or Teams webcam not working or showing a black screen?",
+    "alternatives": [
+      "Webcam black screen in Teams or Zoom",
+      "Camera not detected on video call",
+      "Zoom camera not working on laptop",
+      "Fix webcam permissions in Windows"
+    ],
+    "answer": "To fix webcam issues: 1) Check if your laptop has a physical privacy slider over the camera lens or a dedicated camera toggle key (e.g., F10 or Fn + key); 2) Check Windows privacy permissions: Settings > Privacy & security > Camera, and ensure 'Camera access' and 'Let apps access your camera' are turned ON; 3) In Zoom/Teams settings, confirm the correct camera device is chosen; 4) Close other apps that might be using the camera."
+  },
+  {
+    "id": "app-06",
+    "category": "Application Errors",
+    "question": "How do I resolve the 0xc000007b application error when starting a game or software?",
+    "alternatives": [
+      "The application was unable to start correctly 0xc000007b",
+      "Fix error 0xc000007b in Windows",
+      "Game won't launch 0xc000007b",
+      "Application startup error 0xc000007b"
+    ],
+    "answer": "Error 0xc000007b indicates a 32-bit and 64-bit architecture conflict, typically between the application and DirectX or Visual C++ runtime modules. To fix: 1) Reinstall Microsoft DirectX End-User Runtimes; 2) Reinstall both 32-bit (x86) and 64-bit (x64) Visual C++ Redistributable packages; 3) Run the application as Administrator; 4) Run 'sfc /scannow' in admin command prompt to replace damaged system DLLs; 5) Reinstall the affected program cleanly."
+  },
+  {
+    "id": "app-07",
+    "category": "Application Errors",
+    "question": "How do I clear application cache to resolve glitches and corrupted app states?",
+    "alternatives": [
+      "How to clear app cache in Windows?",
+      "Clear temporary files for a specific program",
+      "Reset an application without reinstalling",
+      "Clear Windows Store app cache wsreset"
+    ],
+    "answer": "To clear app cache: 1) For Microsoft Store apps: go to Settings > Apps > Installed apps, click the three dots on the app > Advanced options > click 'Reset' or 'Repair'; 2) To reset the Microsoft Store itself, run 'wsreset.exe' in the Run dialog (Win + R); 3) For desktop programs (like Spotify, Discord, Slack): close the app, open Run (Win + R), type '%AppData%', locate the app folder, and delete the 'Cache' subfolder inside."
+  },
+  {
+    "id": "sec-01",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "How do I know if an email is a phishing scam?",
+    "alternatives": [
+      "How to spot a phishing email?",
+      "Signs of email scam or spoofing",
+      "Is this suspicious email real or fake?",
+      "How to recognize phishing attacks?"
+    ],
+    "answer": "Key indicators of a phishing email: 1) Inconsistent sender address: the display name says 'PayPal' or 'Bank', but the actual address domain is random (e.g. support@payp-security-alert.xyz); 2) Artificial urgency, threatening account suspension or legal action if you don't act immediately; 3) Generic greetings like 'Dear Customer'; 4) Suspicious links: hover over links without clicking to preview the destination URL; 5) Unsolicited attachments (.zip, .html, .exe, or password-protected files)."
+  },
+  {
+    "id": "sec-02",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "Is Windows Defender / Windows Security enough protection against malware?",
+    "alternatives": [
+      "Do I need third-party antivirus with Windows Defender?",
+      "Is built-in Windows antivirus good enough?",
+      "Should I buy Norton, McAfee, or keep Windows Defender?",
+      "How secure is Windows Security in Windows 11?"
+    ],
+    "answer": "For most everyday users, built-in Windows Security (Windows Defender) provides excellent, lightweight protection. It offers real-time antivirus scanning, cloud-delivered malware definitions, ransomware file protection, and a firewall without the performance bloat or aggressive upselling of legacy third-party antivirus suites. Combined with basic safe computing habits (ad-blocker like uBlock Origin, updated browser, not opening sketchy downloads), it is thoroughly sufficient."
+  },
+  {
+    "id": "sec-03",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "How do I run a full offline malware scan using Microsoft Defender?",
+    "alternatives": [
+      "How to scan PC for viruses using Windows Defender?",
+      "Run Microsoft Defender Offline scan",
+      "Deep virus scan on Windows 10/11",
+      "How to remove malware with built in tools?"
+    ],
+    "answer": "To run an offline virus scan: 1) Open Windows Security from the taskbar shield icon or Start menu; 2) Click 'Virus & threat protection'; 3) Click 'Scan options'; 4) Choose 'Microsoft Defender Antivirus (offline scan)'; 5) Click 'Scan now' and confirm the reboot prompt. Your PC will restart into a secure pre-boot environment where stubborn rootkits and malware cannot evade detection."
+  },
+  {
+    "id": "sec-04",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "What is ransomware and how can I protect my personal files against it?",
+    "alternatives": [
+      "How does ransomware work and how to prevent it?",
+      "Protect computer from file encryption virus",
+      "Enable ransomware protection in Windows",
+      "How to prevent ransomware attacks?"
+    ],
+    "answer": "Ransomware is malicious software that encrypts your personal files and demands ransom payment for the decryption key. Protection steps: 1) Enable 'Controlled folder access' in Windows Security > Virus & threat protection > Ransomware protection; 2) Maintain an isolated offline backup (external hard drive unplugged when not backing up); 3) Keep your OS and browsers updated to patch known vulnerabilities; 4) Never enable macros in unsolicited Word/Excel attachments."
+  },
+  {
+    "id": "sec-05",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "Is public Wi-Fi safe to use and should I use a VPN?",
+    "alternatives": [
+      "Is coffee shop Wi-Fi safe?",
+      "Risks of using public wireless networks",
+      "Do I need a VPN on public Wi-Fi?",
+      "How to stay safe on free public Wi-Fi?"
+    ],
+    "answer": "Public Wi-Fi networks in airports or cafes carry risks including eavesdropping and fake hotspot spoofing. To stay safe: 1) Never perform sensitive financial transactions on public Wi-Fi without a trusted VPN; 2) Ensure websites show 'https://' in the browser address bar with a lock icon; 3) In Windows network settings, set your network profile to 'Public' to disable local file sharing and device discovery; 4) Turn off Wi-Fi auto-connect when traveling."
+  },
+  {
+    "id": "sec-06",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "How do I check if my email or credentials were leaked in a data breach?",
+    "alternatives": [
+      "Was my email leaked online?",
+      "How to check if my password was compromised in a breach?",
+      "Have I Been Pwned safe to use?",
+      "Check data breach history for my accounts"
+    ],
+    "answer": "To check breach status: 1) Visit the widely trusted security resource 'Have I Been Pwned' (haveibeenpwned.com) created by security analyst Troy Hunt; 2) Enter your email address to see which public database breaches include your details; 3) If breached, immediately change your password on that service and any other website where you used the same credentials; 4) Activate 2FA on the affected accounts."
+  },
+  {
+    "id": "sec-07",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "How do I remove browser hijackers and fake pop-up notifications?",
+    "alternatives": [
+      "Stop virus pop ups from bottom right corner of screen",
+      "Chrome browser infected with spam notifications",
+      "Remove fake McAfee or virus found popups",
+      "How to disable scam notifications in Chrome or Edge?"
+    ],
+    "answer": "Most 'virus found' popups in the lower-right corner are spam website notifications rather than actual viruses. To stop them: 1) In Chrome, go to chrome://settings/content/notifications (or edge://settings/content/notifications in Edge); 2) Look under 'Allowed to send notifications'; 3) Find any unfamiliar domains and click the three dots > 'Remove' or 'Block'; 4) Reset search engine defaults to Google/Bing if your homepage was hijacked."
+  },
+  {
+    "id": "gen-01",
+    "category": "General Technical Support",
+    "question": "How do I take a screenshot or screen recording on Windows?",
+    "alternatives": [
+      "How to screenshot on PC?",
+      "Shortcut to capture screen in Windows",
+      "How to use Snipping Tool?",
+      "Screen record on Windows 11 without third party software"
+    ],
+    "answer": "To capture your screen on Windows: 1) Press Win + Shift + S to open the Snipping Tool overlay, then drag to select a rectangular area, window, or full screen; 2) The capture is saved to your clipboard (paste with Ctrl + V) and stored in Pictures > Screenshots; 3) To record screen video: open Snipping Tool, switch to the video camera icon, click 'New', drag the recording region, and click Start."
+  },
+  {
+    "id": "gen-02",
+    "category": "General Technical Support",
+    "question": "What is the difference between Sleep, Hibernate, and Shut Down?",
+    "alternatives": [
+      "Sleep vs Hibernate vs Shut Down explained",
+      "Should I shut down or sleep my laptop?",
+      "Difference between hibernate and sleep in Windows",
+      "Is it bad to leave PC in sleep mode?"
+    ],
+    "answer": "Here is the distinction: 1) Sleep: puts your PC into a low-power state and keeps open documents and apps in RAM for instant wake-up in seconds (uses a small trickle of battery); 2) Hibernate: saves your open session to the SSD/hard drive (hiberfil.sys) and powers down completely (zero battery usage, resumes session on boot); 3) Shut Down: closes all programs, kernel sessions, and powers off completely, ensuring fresh system startup."
+  },
+  {
+    "id": "gen-03",
+    "category": "General Technical Support",
+    "question": "How do I check my computer's hardware specifications (CPU, RAM, GPU, SSD)?",
+    "alternatives": [
+      "How to find my PC specs?",
+      "Check how much RAM and processor my computer has",
+      "Where to find graphics card specs in Windows?",
+      "Check hardware info Windows 11"
+    ],
+    "answer": "To check hardware specifications: 1) Quick overview: Open Settings > System > About to see your Processor (CPU), installed RAM, and Windows version; 2) Detailed view: Press Win + R, type 'msinfo32', and press Enter for the System Information utility; 3) Real-time hardware view: Press Ctrl + Shift + Esc for Task Manager, and click the 'Performance' tab to view live CPU, Memory, Disk, and GPU details."
+  },
+  {
+    "id": "gen-04",
+    "category": "General Technical Support",
+    "question": "How do I customize and manage notifications in Windows to avoid distractions?",
+    "alternatives": [
+      "Turn off annoying notifications in Windows",
+      "How to enable Focus assist / Do Not Disturb in Windows 11?",
+      "Stop pop up notifications on PC",
+      "Silence notifications on computer"
+    ],
+    "answer": "To manage notifications: 1) Go to Settings > System > Notifications; 2) Toggle notifications completely OFF, or scroll down to disable specific apps (like games or chat clients); 3) In Windows 11, enable 'Do Not Disturb' to route notifications directly to the notification center silently; 4) Set up 'Focus sessions' to suppress alerts during study or work periods."
+  },
+  {
+    "id": "gen-05",
+    "category": "General Technical Support",
+    "question": "How do I fix a USB flash drive or external hard drive not showing up in File Explorer?",
+    "alternatives": [
+      "USB drive not detected by computer",
+      "Flash drive plugged in but not visible in This PC",
+      "External hard drive missing in Windows",
+      "USB thumb drive not showing up"
+    ],
+    "answer": "To troubleshoot an undetected USB drive: 1) Try plugging into a different USB port directly on the motherboard/laptop, avoiding unpowered hubs; 2) Press Win + X and select 'Disk Management'; 3) Look for your drive in the bottom list; if it has no drive letter, right-click its volume, choose 'Change Drive Letter and Paths...', and assign a letter (e.g. E:); 4) If listed as 'Unallocated', initialize or format it; 5) Check Device Manager under Universal Serial Bus controllers for driver issues."
+  },
+  {
+    "id": "gen-06",
+    "category": "General Technical Support",
+    "question": "How do I clear printer queue when a document is stuck printing?",
+    "alternatives": [
+      "Printer stuck on printing document",
+      "How to cancel stuck print job in Windows?",
+      "Clear printer spooler queue",
+      "Printer won't print and queue is frozen"
+    ],
+    "answer": "To clear a stuck print queue: 1) Open Command Prompt as Administrator; 2) Stop the Print Spooler service by running: 'net stop spooler'; 3) Open File Explorer, navigate to 'C:\\Windows\\System32\\spool\\PRINTERS', and delete all temporary files in that folder; 4) Restart the Print Spooler service by running: 'net start spooler'; 5) Your print queue will now be clean and ready for new jobs."
+  },
+  {
+    "id": "gen-07",
+    "category": "General Technical Support",
+    "question": "What are the most useful Windows keyboard shortcuts every user should know?",
+    "alternatives": [
+      "Essential Windows keyboard shortcuts list",
+      "Best hotkeys for Windows productivity",
+      "Useful computer shortcut keys",
+      "Windows 11 shortcuts guide"
+    ],
+    "answer": "Essential Windows productivity shortcuts: 1) Win + V: Clipboard history (paste earlier copies and pinned snippets); 2) Win + Shift + S: Snipping tool area screenshot; 3) Win + D: Show/hide desktop; 4) Ctrl + Shift + Esc: Direct Task Manager; 5) Win + L: Instantly lock computer; 6) Win + . (period): Emoji and symbol picker; 7) Win + Arrow keys: Snap and arrange active windows."
+  },
+  {
+    "id": "hw-08",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why is my Bluetooth device not pairing or connecting to Windows?",
+    "alternatives": [
+      "Bluetooth headphones won't connect to PC",
+      "Bluetooth not working in Windows 11",
+      "Bluetooth device paired but not connected",
+      "Can't find Bluetooth toggle in settings",
+      "bluetooth connect nahi ho raha"
+    ],
+    "answer": "To resolve Bluetooth pairing issues: 1) Toggle Bluetooth off and on in Windows Settings > Bluetooth & devices; 2) Remove the device and re-pair: click the three dots beside your device, click 'Remove device', put your headphones/mouse into pairing mode, and click 'Add device'; 3) Restart the Bluetooth Support Service: press Win + R, type 'services.msc', find 'Bluetooth Support Service', right-click and select 'Restart'; 4) Update your Bluetooth adapter driver via Device Manager."
+  },
+  {
+    "id": "hw-09",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why is my laptop battery draining so fast and how can I generate a battery health report?",
+    "alternatives": [
+      "Laptop battery dying very fast",
+      "How to check battery health in Windows?",
+      "Battery backup is too low on laptop",
+      "Generate Windows battery report cmd",
+      "battery jaldi khatam ho rahi hai"
+    ],
+    "answer": "To diagnose and fix rapid battery drain: 1) Generate an official battery diagnostic: open Command Prompt as Administrator, type 'powercfg /batteryreport', and press Enter. Open the generated HTML file in C:\\Windows\\System32 to inspect your battery's 'Design Capacity' vs 'Full Charge Capacity'; 2) Switch Windows Power Mode to 'Best power efficiency' (Settings > System > Power & battery); 3) Reduce display brightness and set refresh rate to 60 Hz; 4) Check Task Manager for background battery hogs."
+  },
+  {
+    "id": "hw-10",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "How do I fix screen flickering, flashing, or horizontal lines on my computer monitor?",
+    "alternatives": [
+      "Computer screen is flickering",
+      "Display flashing black lines on laptop",
+      "Monitor screen flickering in Windows 11",
+      "Fix display flickering graphics driver",
+      "screen flicker kar rahi hai"
+    ],
+    "answer": "To fix screen flickering: 1) Test if it is an app or driver issue: press Ctrl + Shift + Esc to open Task Manager. If Task Manager flickers along with the screen, the issue is your graphics driver; if Task Manager does NOT flicker, an installed app (like Norton, iCloud, or video codecs) is the culprit; 2) For driver flickering, press Win + Ctrl + Shift + B to restart your graphics driver subsystem; 3) Reinstall your display drivers cleanly using clean install mode; 4) Check cable connections for external monitors."
+  },
+  {
+    "id": "hw-11",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why does my computer turn on and then turn off immediately after a few seconds?",
+    "alternatives": [
+      "PC turns on then immediately shuts down",
+      "Computer powers off right after pressing power button",
+      "PC boot loop shuts down in 5 seconds",
+      "Computer shuts off suddenly after turning on",
+      "computer chalu hoke turant band ho raha hai"
+    ],
+    "answer": "If a computer powers off immediately after starting: 1) Thermal protection cutoff: the CPU heatsink or thermal paste may have detached, causing thermal shutdown within seconds to prevent CPU destruction; 2) Faulty Power Supply Unit (PSU): an aging power supply may trip when power rails spike on boot; 3) RAM short: reseat memory sticks one by one; 4) Disconnect all external USB peripherals to eliminate short circuits on USB headers; 5) Clear CMOS by removing the motherboard coin-cell battery for 5 minutes."
+  },
+  {
+    "id": "hw-12",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why does my laptop charger or power adapter get extremely hot when charging?",
+    "alternatives": [
+      "Laptop power brick burning hot",
+      "Is it normal for laptop charger to get very hot?",
+      "Charger overheating when plugged in",
+      "Laptop charger feels too hot to touch"
+    ],
+    "answer": "It is normal for power adapters to get warm (up to 45-50°C) during fast-charging, but extreme burning heat indicates poor heat dissipation or electrical resistance: 1) Keep the charger in a well-ventilated space on a hard floor or desk—never under blankets, pillows, or inside bags; 2) Inspect the cable and barrel/USB-C connector for fraying, bends, or loose contacts; 3) Ensure the adapter wattage matches your laptop manufacturer's exact specifications; 4) If the plastic casing smells burnt or is warping, disconnect immediately and replace it."
+  },
+  {
+    "id": "hw-13",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "How do I fix my laptop microphone not working or not picking up my voice?",
+    "alternatives": [
+      "Microphone not picking up sound in Windows",
+      "Mic not working in Zoom, Meet, or Discord",
+      "Laptop built-in microphone silent",
+      "Microphone access permissions Windows",
+      "mic me aawaz nahi aa rahi"
+    ],
+    "answer": "To fix microphone issues: 1) Check Windows Privacy: go to Settings > Privacy & security > Microphone, and toggle ON 'Microphone access' and 'Let apps access your microphone'; 2) Verify default input device: go to Settings > System > Sound, and under 'Input', select your active microphone and test input volume; 3) Check physical mute keys on your keyboard (often F4 or Fn + F4 with a mic slash icon); 4) Reinstall audio drivers in Device Manager under 'Audio inputs and outputs'."
+  },
+  {
+    "id": "hw-14",
+    "category": "Computer and Laptop Troubleshooting",
+    "question": "Why is there no sound through HDMI on my TV or external monitor?",
+    "alternatives": [
+      "HDMI has picture but no sound",
+      "No audio through HDMI cable to TV",
+      "How to enable HDMI sound in Windows?",
+      "Monitor speakers not playing audio through HDMI"
+    ],
+    "answer": "To route audio through HDMI: 1) Click the Sound icon on your Windows taskbar; 2) Click the output device selector (arrow beside the volume slider) and choose your TV or monitor name rather than 'Realtek Speakers'; 3) If the HDMI audio device does not appear, open Device Manager, expand 'Sound, video and game controllers', right-click 'High Definition Audio Device' or your GPU audio (NVIDIA/Intel High Definition Audio), and click 'Enable device' or 'Update driver'; 4) Re-seat both ends of the HDMI cable."
+  },
+  {
+    "id": "net-08",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I fix a Wi-Fi connection that says 'Action needed' and open captive portal login?",
+    "alternatives": [
+      "Wi-Fi says action needed",
+      "Hotel or airport Wi-Fi login page won't open",
+      "Captive portal splash screen not loading",
+      "How to force Wi-Fi login page to appear?"
+    ],
+    "answer": "If a public Wi-Fi network says 'Action needed' and the login page doesn't appear: 1) Open your web browser and navigate to 'http://neverssl.com' or 'http://1.1.1.1' (HTTP unencrypted traffic forces the captive portal redirect); 2) In router gateway IP: type your default gateway (e.g. 192.168.1.1 or 10.0.0.1) into the URL bar; 3) Temporarily turn off third-party VPNs or custom DNS (like 1.1.1.1), as custom secure DNS prevents captive portal redirection; 4) Disconnect and reconnect to the network."
+  },
+  {
+    "id": "net-09",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I view saved Wi-Fi passwords for connected networks on Windows?",
+    "alternatives": [
+      "How to see my Wi-Fi password in Windows 11?",
+      "Find password of connected Wi-Fi",
+      "Show Wi-Fi password in command prompt netsh",
+      "Recover saved wireless network password",
+      "wifi ka password kaise dekhe"
+    ],
+    "answer": "To view your Wi-Fi password: 1) Settings method: Go to Settings > Network & internet > Wi-Fi > click on your connected Wi-Fi network properties, scroll down and click 'View Wi-Fi security key'; 2) Command Prompt method (works for any previously saved network): Open Command Prompt, run 'netsh wlan show profile name=\"YourNetworkName\" key=clear', and locate the 'Key Content' field under Security Settings to view the plain-text password."
+  },
+  {
+    "id": "net-10",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I fix 'Unidentified Network - No Internet' on Ethernet or LAN cable?",
+    "alternatives": [
+      "Ethernet says unidentified network",
+      "LAN cable plugged in but no internet connection",
+      "Fix unidentified network error on Windows",
+      "Ethernet adapter IP configuration failure"
+    ],
+    "answer": "To resolve Unidentified Network on Ethernet: 1) Unplug the Ethernet cable, wait 10 seconds, and plug back into both router and PC until the link LED blinks; 2) Open Command Prompt as Administrator and execute: 'ipconfig /release', then 'ipconfig /renew'; 3) In Settings > Network & internet > Advanced network settings, click 'Network reset' and restart; 4) In Device Manager, right-click your Ethernet adapter, select 'Uninstall device', and restart your PC to allow Windows to cleanly reinstall the driver."
+  },
+  {
+    "id": "net-11",
+    "category": "Internet and Wi-Fi Problems",
+    "question": "How do I resolve the 'DNS Server Not Responding' error in Windows?",
+    "alternatives": [
+      "DNS server is not responding error",
+      "How to fix DNS server errors?",
+      "Websites won't open DNS server not responding",
+      "Troubleshoot DNS failure Windows"
+    ],
+    "answer": "To fix 'DNS Server Not Responding': 1) Flush DNS cache: open Command Prompt as Administrator and run 'ipconfig /flushdns', 'ipconfig /registerdns', and 'netsh winsock reset'; 2) Switch to public reliable DNS: go to Network Settings > Wi-Fi/Ethernet > Hardware Properties > DNS > Edit, and enter Google DNS (8.8.8.8 and 8.8.4.4) or Cloudflare (1.1.1.1 and 1.0.0.1); 3) Restart your router; 4) Temporarily disable third-party antivirus firewall which might be blocking port 53 DNS queries."
+  },
+  {
+    "id": "acc-08",
+    "category": "Account Access and Password Issues",
+    "question": "How do I remove a PIN and sign in with a traditional password in Windows?",
+    "alternatives": [
+      "How to delete Windows PIN and use password?",
+      "Remove Windows Hello PIN",
+      "Turn off PIN login in Windows 11",
+      "Switch from PIN to password sign in"
+    ],
+    "answer": "To remove a Windows PIN: 1) Go to Settings > Accounts > Sign-in options; 2) Under 'Ways to sign in', click on 'PIN (Windows Hello)'; 3) Click 'Remove'; 4) If the Remove button is grayed out, scroll down to 'Additional settings' and turn OFF 'For improved security, only allow Windows Hello sign-in for Microsoft accounts on this device'; 5) Close and re-open Settings; the Remove button will now be active."
+  },
+  {
+    "id": "acc-09",
+    "category": "Account Access and Password Issues",
+    "question": "What should I do if Windows shows 'We can't sign in to your account' temporary profile error?",
+    "alternatives": [
+      "Logged into a temporary profile Windows 10/11",
+      "We can't sign in to your account error",
+      "Corrupted user profile in Windows",
+      "Files missing after logging into Windows temporary account"
+    ],
+    "answer": "This happens when Windows fails to read your user registry hive and loads a temporary profile: 1) DO NOT save new files on the desktop, as temporary profiles are deleted upon logout; 2) Restart your PC 2-3 times (often resolves temporary file locks); 3) In Registry Editor (regedit.exe as Admin), navigate to: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList; 4) Check for a profile folder ending in '.bak'. Delete the duplicate non-bak entry, and rename the '.bak' folder by removing the '.bak' extension; 5) Reboot."
+  },
+  {
+    "id": "acc-10",
+    "category": "Account Access and Password Issues",
+    "question": "How do I find my BitLocker recovery key and manage drive encryption?",
+    "alternatives": [
+      "How to find BitLocker recovery key?",
+      "BitLocker prompt asking for recovery key on startup",
+      "Where is my BitLocker key saved?",
+      "Unlock encrypted drive BitLocker"
+    ],
+    "answer": "To locate your 48-digit BitLocker recovery key: 1) Visit Microsoft's recovery key portal at 'account.microsoft.com/devices/recoverykey' from a phone or second computer and sign in with the Microsoft account linked to your PC; 2) Check Azure Active Directory or your school/work portal if on a managed corporate PC; 3) Check any printed paper copies or USB drives you saved when BitLocker was initially configured; 4) Enter the 48 digits at the blue recovery prompt to unlock your drive."
+  },
+  {
+    "id": "file-08",
+    "category": "File Management and Backups",
+    "question": "How do I remove 'The disk is write-protected' error on a USB flash drive or SD card?",
+    "alternatives": [
+      "USB drive is write protected how to fix?",
+      "Can't copy files to flash drive write protected",
+      "Remove write protection using diskpart",
+      "Flash drive won't allow deleting or adding files",
+      "pen drive write protected ho gaya"
+    ],
+    "answer": "To clear write protection on a USB drive: 1) Check physical lock switch: inspect the side of SD cards or USB sticks for a physical sliding 'Lock' switch and slide it forward; 2) Clear read-only attributes via Diskpart: open Command Prompt as Admin, type 'diskpart' > 'list disk' > 'select disk X' (where X is your USB number) > 'attributes disk clear readonly' > 'exit'; 3) Check Registry: in regedit, navigate to HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\StorageDevicePolicies, and change 'WriteProtect' to 0."
+  },
+  {
+    "id": "file-09",
+    "category": "File Management and Backups",
+    "question": "How do I identify and delete duplicate files safely to free up disk space?",
+    "alternatives": [
+      "Find duplicate files in Windows",
+      "How to clean up duplicate photos and downloads?",
+      "Best free duplicate file finder tool",
+      "Remove identical duplicate files"
+    ],
+    "answer": "To remove duplicate files safely: 1) Use reputable open-source or free dedicated tools such as 'Czkawka' or 'Duplicate Cleaner Free'; 2) Never blindly scan the 'C:\\Windows' or 'C:\\Program Files' directories—only scan your personal folders (Downloads, Documents, Pictures); 3) Compare by SHA-256 or MD5 hash rather than file name alone to ensure files are truly identical; 4) Review files before confirming deletion."
+  },
+  {
+    "id": "file-10",
+    "category": "File Management and Backups",
+    "question": "How do I permanently delete sensitive files so they cannot be recovered by forensic software?",
+    "alternatives": [
+      "How to permanently shred files in Windows?",
+      "Secure file deletion so recuva can't restore",
+      "Wipe sensitive documents permanently",
+      "Use cipher command to wipe free space"
+    ],
+    "answer": "Standard Recycle Bin deletion only unlinks file references; the raw bytes remain until overwritten. To shred data permanently: 1) Shift + Delete bypasses the Recycle Bin; 2) Wipe residual free space using the built-in Windows cipher command: open Command Prompt as Admin and type 'cipher /w:C:' to write 0s, 1s, and random bytes over deleted sectors; 3) For individual file shredding, use trusted utilities like Eraser (eraser.heidi.ie) using DoD 5220.22-M sanitization standards."
+  },
+  {
+    "id": "os-08",
+    "category": "Operating-System Issues",
+    "question": "Why does my screen say 'Activate Windows - Go to Settings to activate Windows' and how do I fix it?",
+    "alternatives": [
+      "Remove Activate Windows watermark",
+      "How to activate Windows with genuine product key?",
+      "Windows says license expired",
+      "Activate Windows watermark on desktop"
+    ],
+    "answer": "The watermark appears when your Windows installation has not been authenticated with Microsoft's licensing servers: 1) Check activation state in Settings > System > Activation; 2) If your PC previously had a genuine digital license linked to your hardware, click 'Troubleshoot' to allow Windows to query Microsoft servers; 3) If you upgraded your motherboard, click 'I changed hardware on this device recently' and sign into your Microsoft account; 4) Enter a valid 25-character product key under 'Change product key'."
+  },
+  {
+    "id": "os-09",
+    "category": "Operating-System Issues",
+    "question": "How do I enable Hardware Virtualization (VT-x / AMD-V) in BIOS for WSL, Hyper-V, and emulators?",
+    "alternatives": [
+      "Enable virtualization in BIOS Windows",
+      "Virtualization disabled in firmware error",
+      "How to turn on VT-x or AMD-V?",
+      "Virtualization not supported or enabled in Task Manager"
+    ],
+    "answer": "To enable CPU virtualization: 1) Check status: open Task Manager (Ctrl + Shift + Esc), click Performance > CPU, and check 'Virtualization: Enabled/Disabled'; 2) If disabled, reboot your PC and press the BIOS key repeatedly on startup (F2, F12, Del, or Esc depending on manufacturer); 3) In BIOS, navigate to Advanced > CPU Configuration; 4) For Intel, enable 'Intel Virtualization Technology' (VT-x); for AMD, enable 'SVM Mode' (Secure Virtual Machine); 5) Save settings (F10) and reboot."
+  },
+  {
+    "id": "os-10",
+    "category": "Operating-System Issues",
+    "question": "How do I fix Windows time and date not synchronizing or constantly showing the wrong time?",
+    "alternatives": [
+      "Windows clock showing wrong time",
+      "Time not syncing in Windows 11/10",
+      "Clock resets every time PC turns on CMOS battery",
+      "Fix Windows time sync failed error"
+    ],
+    "answer": "If your clock shows the wrong time: 1) Force time sync: go to Settings > Time & language > Date & time, and click 'Sync now' under Additional settings; 2) Restart Windows Time Service: press Win + R, type 'services.msc', find 'Windows Time', right-click and set Startup type to 'Automatic', then click 'Start'; 3) Change time server: go to Control Panel > Clock and Region > Date and Time > Internet Time > Change settings, and switch server to 'time.google.com' or 'pool.ntp.org'; 4) If the time resets every time you unplug your PC, replace the CR2032 CMOS battery on your motherboard."
+  },
+  {
+    "id": "app-08",
+    "category": "Application Errors",
+    "question": "How do I fix Google Chrome or Edge consuming 100% high memory and RAM?",
+    "alternatives": [
+      "Chrome using all my RAM memory",
+      "Why is browser taking so much memory?",
+      "High RAM usage by Edge or Chrome",
+      "Fix Chrome memory leak",
+      "chrome bahut ram use kar raha hai"
+    ],
+    "answer": "To reduce browser RAM consumption: 1) Enable Memory Saver: in Chrome or Edge, go to Settings > Performance, and turn ON 'Memory Saver' to automatically free memory from inactive background tabs; 2) Inspect browser internal task manager: press Shift + Esc inside Chrome to identify which specific tab or extension is leaking memory and terminate it; 3) Remove heavy or redundant extensions; 4) Turn off 'Continue running background apps when browser is closed' in Settings > System."
+  },
+  {
+    "id": "app-09",
+    "category": "Application Errors",
+    "question": "How do I fix 'Display driver stopped responding and has recovered' graphics crash?",
+    "alternatives": [
+      "Graphics driver crashed and recovered error",
+      "Display driver nvlddmkm stopped responding",
+      "GPU driver crash while gaming Windows",
+      "Fix TDR timeout detection recovery error"
+    ],
+    "answer": "This Timeout Detection and Recovery (TDR) error happens when the GPU takes too long to respond to the Windows kernel: 1) Reinstall graphics drivers cleanly using Display Driver Uninstaller (DDU) in Safe Mode, followed by a fresh installation from NVIDIA, AMD, or Intel; 2) Roll back recent GPU overclocks to factory clocks in MSI Afterburner; 3) Monitor GPU temperatures with HWMonitor—thermal throttling can cause driver crashes; 4) Check power supply cables to your graphics card."
+  },
+  {
+    "id": "app-10",
+    "category": "Application Errors",
+    "question": "How do I fix Discord, Slack, or game audio sounding robotic, distorted, or cutting out?",
+    "alternatives": [
+      "Discord voice sounds robotic and lagging",
+      "Mic cutting out in Discord voice channel",
+      "Robotic audio glitch in video calls",
+      "Fix Discord voice lag and packet loss"
+    ],
+    "answer": "To fix robotic or lagging audio in voice chat: 1) Check connection ping: click the connection info badge in Discord; if ping is red/yellow with packet loss, switch your voice channel server region; 2) Turn off 'Advanced Voice Activity' and 'Krisp Noise Suppression' in Discord Settings > Voice & Video to reduce CPU processing overhead; 3) Disable 'Exclusive Mode': go to Windows Sound settings > Microphone properties > Advanced, and uncheck 'Allow applications to take exclusive control of this device'; 4) Update your audio drivers."
+  },
+  {
+    "id": "sec-08",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "How do I check if my computer is being remotely controlled or monitored by unauthorized users?",
+    "alternatives": [
+      "Is someone spying on my computer?",
+      "How to check if PC is hacked or monitored remotely?",
+      "Detect remote access trojan RAT on Windows",
+      "Check active remote connections Windows"
+    ],
+    "answer": "To verify whether your PC is being monitored: 1) Inspect active established network connections: open Command Prompt as Admin and run 'netstat -ano -p tcp | findstr ESTABLISHED' to inspect foreign IP addresses and associated process PIDs; 2) Check for remote desktop software: review Task Manager and Installed Apps for remote desktop tools like AnyDesk, TeamViewer, RustDesk, or VNC; 3) Check Startup and scheduled tasks via Task Manager > Startup; 4) Run Microsoft Defender Offline Scan to remove hidden remote access trojans (RATs)."
+  },
+  {
+    "id": "sec-09",
+    "category": "Basic Cybersecurity and Safe Computing",
+    "question": "What immediate steps should I take if I accidentally downloaded or opened a suspicious file?",
+    "alternatives": [
+      "Downloaded a virus file what should I do?",
+      "Accidentally opened a suspicious attachment",
+      "How to contain malware after downloading malicious file?",
+      "Emergency steps for infected computer"
+    ],
+    "answer": "If you opened a suspicious file: 1) Immediately disconnect from the internet: turn off Wi-Fi or pull your Ethernet cable out to stop malware from communicating with command-and-control servers or exfiltrating data; 2) Do not enter any passwords or credit card numbers; 3) Open Windows Security and run a 'Microsoft Defender Offline Scan'; 4) Check Task Manager for unfamiliar processes with high CPU usage; 5) From a different, clean device (like your phone), change passwords for your primary email, banking, and sensitive accounts."
+  },
+  {
+    "id": "gen-08",
+    "category": "General Technical Support",
+    "question": "Why is my keyboard typing the wrong letters or typing numbers instead of letters?",
+    "alternatives": [
+      "Keyboard typing wrong symbols like @ and \" swapped",
+      "Laptop typing numbers instead of letters NumLock",
+      "Keyboard keys repeating automatically",
+      "Keyboard language layout changed Windows",
+      "keyboard me galat type ho raha hai"
+    ],
+    "answer": "To fix keyboard typing issues: 1) Swapped symbols (e.g. '@' and '\"' inverted): this happens when your keyboard layout switched from US to UK. Press 'Win + Spacebar' to toggle back to 'English (United States)'; 2) Letters typing numbers (e.g. 'u', 'i', 'o' typing '4', '5', '6'): NumLock is enabled on compact laptops. Press 'Fn + NumLk' (or 'Fn + F11/F12') to disable NumLock; 3) Keys repeating: go to Settings > Accessibility > Keyboard, and toggle OFF 'Filter Keys'."
+  },
+  {
+    "id": "gen-09",
+    "category": "General Technical Support",
+    "question": "How do I fix a printer that shows 'Printer status is Offline' in Windows?",
+    "alternatives": [
+      "Printer says offline how to make it online?",
+      "Printer connected but offline in Windows 11",
+      "Can't print printer status offline",
+      "Fix offline printer HP, Canon, or Epson",
+      "printer offline dikha raha hai"
+    ],
+    "answer": "To bring an offline printer back online: 1) Power cycle: turn the printer off, unplug power for 30 seconds, plug back in and turn on; 2) Uncheck 'Use Printer Offline': go to Settings > Bluetooth & devices > Printers & scanners > click your printer > 'Open print queue' > click 'Printer' in menu bar and ensure 'Use Printer Offline' is UNCHECKED; 3) Set as Default: click 'Set as default printer'; 4) Restart Print Spooler: run 'net stop spooler' followed by 'net start spooler' in Admin Command Prompt."
+  }
+]
