@@ -26,6 +26,18 @@ argos_packages/
 .coverage
 htmlcov/
 
+# Secrets & environment variables
+.env
+*.env
+*.key
+*.token
+
+# Audio and temporary media files
+*.mp3
+*.wav
+*.ogg
+*.tmp
+
 # OS specific files
 Thumbs.db
 Desktop.ini
