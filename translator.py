@@ -97,7 +97,7 @@ class OfflineTranslator:
 
         tokenizer, model = self._get_hf_model(model_name)
         inputs = tokenizer([text], return_tensors="pt", padding=True, truncation=True, max_length=512)
-        outputs = model.generate(**inputs, max_length=512)
+        outputs = model.generate(**inputs, max_length=512, num_beams=4, early_stopping=True)
         return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     def _translate_direct(self, text: str, from_code: str, to_code: str) -> str:

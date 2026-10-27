@@ -4,3 +4,4 @@ langdetect>=1.0.9
 pytest>=8.2.0
 transformers>=4.40.0
 torch>=2.0.0
+pyttsx3>=2.90
