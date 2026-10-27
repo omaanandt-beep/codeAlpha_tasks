@@ -101,6 +101,15 @@ st.markdown("""
         align-items: center;
         gap: 18px;
     }
+    .synapse-logo-svg {
+        filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+        flex-shrink: 0;
+    }
+    .synapse-logo-svg:hover {
+        transform: scale(1.08) rotate(3deg);
+        filter: drop-shadow(0 0 25px rgba(192, 132, 252, 0.75));
+    }
     .brand-heading {
         font-size: 26px;
         font-weight: 900;
@@ -370,30 +379,60 @@ installed_count = len(registry.get_installed_codes())
 st.markdown(f"""
 <div class="hero-navbar">
     <div class="brand-group">
-        <!-- Next-Gen SynapseTranslate Neural Prism SVG Logo -->
-        <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="44" stroke="url(#syn_g1)" stroke-width="3" stroke-dasharray="6 4"/>
-            <circle cx="50" cy="50" r="32" stroke="url(#syn_g2)" stroke-width="2.2"/>
-            <ellipse cx="50" cy="50" rx="44" ry="17" stroke="url(#syn_g1)" stroke-width="2.2" transform="rotate(-30 50 50)"/>
-            <ellipse cx="50" cy="50" rx="44" ry="17" stroke="url(#syn_g2)" stroke-width="2.2" transform="rotate(30 50 50)"/>
-            <circle cx="50" cy="50" r="10" fill="url(#syn_g3)"/>
-            <circle cx="28" cy="38" r="4" fill="#38bdf8"/>
-            <circle cx="72" cy="62" r="4" fill="#c084fc"/>
-            <circle cx="50" cy="18" r="3.5" fill="#f472b6"/>
+        <!-- Purpose-Defined Logo: Multilingual Exchange (A ⮂ अ), Speech Waves, & Neural Synapse -->
+        <svg class="synapse-logo-svg" width="54" height="54" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <linearGradient id="syn_g1" x1="0" y1="0" x2="100" y2="100">
+                <linearGradient id="bubble_left" x1="15" y1="12" x2="75" y2="70" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stop-color="#38bdf8"/>
-                    <stop offset="100%" stop-color="#818cf8"/>
+                    <stop offset="100%" stop-color="#4f46e5"/>
                 </linearGradient>
-                <linearGradient id="syn_g2" x1="100" y1="0" x2="0" y2="100">
+                <linearGradient id="bubble_right" x1="45" y1="50" x2="105" y2="108" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stop-color="#c084fc"/>
+                    <stop offset="100%" stop-color="#f43f5e"/>
+                </linearGradient>
+                <linearGradient id="syn_bridge" x1="35" y1="60" x2="85" y2="60" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#38bdf8"/>
+                    <stop offset="50%" stop-color="#a855f7"/>
                     <stop offset="100%" stop-color="#f472b6"/>
                 </linearGradient>
-                <linearGradient id="syn_g3" x1="0" y1="0" x2="100" y2="100">
-                    <stop offset="0%" stop-color="#60a5fa"/>
-                    <stop offset="100%" stop-color="#a855f7"/>
-                </linearGradient>
+                <filter id="syn_glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3.5" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
             </defs>
+            
+            <!-- Air-Gapped Neural Orbit Rings -->
+            <circle cx="60" cy="60" r="54" stroke="url(#syn_bridge)" stroke-width="1.8" stroke-dasharray="5 7" opacity="0.38"/>
+            <circle cx="60" cy="60" r="57" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="1 8" opacity="0.25"/>
+
+            <!-- Left Speech Pod: Source Language (Latin 'A' + Voice Acoustic Waves) -->
+            <path d="M16 22C16 16.4772 20.4772 12 26 12H64C69.5228 12 74 16.4772 74 22V50C74 55.5228 69.5228 60 64 60H38L22 72V60H26C20.4772 60 16 55.5228 16 50V22Z" fill="url(#bubble_left)" fill-opacity="0.28" stroke="url(#bubble_left)" stroke-width="2.4"/>
+            <text x="36" y="44" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="26" fill="#38bdf8">A</text>
+            <!-- Voice Waves on Source Pod -->
+            <path d="M54 26 Q59 33 54 40" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <path d="M60 21 Q67 33 60 45" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+            <!-- Right Speech Pod: Indic Target (Devanagari 'अ' - Marathi/Hindi & Global Multilingual) -->
+            <path d="M104 98C104 103.523 99.5228 108 94 108H56C50.4772 108 46 103.523 46 98V70C46 64.4772 50.4772 60 56 60H82L98 48V60H94C99.5228 60 104 64.4772 104 70V98Z" fill="url(#bubble_right)" fill-opacity="0.28" stroke="url(#bubble_right)" stroke-width="2.4"/>
+            <text x="76" y="91" font-family="'Plus Jakarta Sans', 'Mangal', 'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="26" fill="#f472b6" text-anchor="middle">अ</text>
+            <!-- Voice Waves on Target Pod -->
+            <path d="M90 74 Q85 81 90 88" stroke="#f472b6" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <path d="M96 69 Q89 81 96 93" stroke="#f472b6" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+            <!-- Central Neural Synapse Bridge: Bidirectional Language Flux -->
+            <!-- Top Right-bound Neural Flow -->
+            <path d="M42 48 C 50 38, 62 38, 72 48" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <polygon points="75,49 67,45 68,52" fill="#38bdf8"/>
+
+            <!-- Bottom Left-bound Neural Flow -->
+            <path d="M78 72 C 70 82, 58 82, 48 72" stroke="#f472b6" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <polygon points="45,71 53,75 52,68" fill="#f472b6"/>
+
+            <!-- Glowing Synaptic Core Node -->
+            <circle cx="60" cy="60" r="10" fill="url(#syn_bridge)" fill-opacity="0.3"/>
+            <circle cx="60" cy="60" r="5" fill="#ffffff" filter="url(#syn_glow)"/>
+            <circle cx="48" cy="40" r="2.5" fill="#38bdf8"/>
+            <circle cx="72" cy="80" r="2.5" fill="#f472b6"/>
         </svg>
         <div>
             <h1 class="brand-heading">SynapseTranslate</h1>
